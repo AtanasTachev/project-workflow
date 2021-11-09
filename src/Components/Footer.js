@@ -1,6 +1,6 @@
 import '../App.css';
 
-function Footer () {
+const Footer = () => {
     return (<nav className="footer">
         <p>All rights reserved &copy;</p>
     </nav>);
