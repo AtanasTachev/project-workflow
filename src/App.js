@@ -21,8 +21,7 @@ function App() {
       </Router>
   );
 }
-// ReactDOM.render(
-// )
+
 
 
 export default App;
