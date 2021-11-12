@@ -12,28 +12,28 @@ const Register = () => {
             <h2>Sign Up</h2>
             <ul className="noBullet">
                 <li>
-                    <label for="title">Title:</label>
-                    <input type="text" className="inputFields" id="title" name="title" value="" placeholder="arch" />
+                    <label htmlFor="title">Title:</label>
+                    <input type="text" className="inputFields" id="title" name="title" placeholder="arch" />
                 </li>
                 <li>
-                    <label for="first-name">First Name:</label>
-                    <input type="text" className="inputFields" id="first-name" name="firstName" value="" placeholder="Andrey" />
+                    <label htmlFor="first-name">First Name:</label>
+                    <input type="text" className="inputFields" id="first-name" name="firstName" placeholder="Andrey" />
                 </li>
                 <li>
-                    <label for="last-name">Last Name:</label>
-                    <input type="text" className="inputFields" id="last-name" name="lastName" value="" placeholder="Georgiev" />
+                    <label htmlFor="last-name">Last Name:</label>
+                    <input type="text" className="inputFields" id="last-name" name="lastName" placeholder="Georgiev" />
                 </li>
                 <li>
-                    <label for="email">Email:</label>
-                    <input type="text" className="inputFields" id="email" name="email" value=""
+                    <label htmlFor="email">Email:</label>
+                    <input type="text" className="inputFields" id="email" name="email" 
                         placeholder="andrey@gmail.com" />
                 </li>
                 <li>
-                    <label for="password">Password:</label>
+                    <label htmlFor="password">Password:</label>
                     <input type="password" className="inputFields" id="password" name="password" placeholder="******" />
                 </li>
                 <li>
-                    <label for="repeat-password">Repeat-Password:</label>
+                    <label htmlFor="repeat-password">Repeat-Password:</label>
                     <input type="password" className="inputFields" id="repeat-password" name="repeatPassword" placeholder="******" />
                 </li>
                 <li id="center-btn">

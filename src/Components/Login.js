@@ -13,13 +13,13 @@ const Login = () => {
         </div>
         <form action="/login" method="POST" className="loginForm">
             <h2>Login</h2>
-            <ul class="noBullet">
+            <ul className="noBullet">
                 <li>
-                    <label for="email">Email:</label>
+                    <label htmlFor="email">Email:</label>
                     <input type="text" className="inputFields" id="email" name="email" placeholder="andrey@gmail.com" />
                 </li>
                 <li>
-                    <label for="password">Password:</label>
+                    <label htmlFor="password">Password:</label>
                     <input type="password" className="inputFields" id="password" name="password" placeholder="*******" />
                 </li>
 
