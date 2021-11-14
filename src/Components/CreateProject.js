@@ -8,8 +8,8 @@ const CreateProject = () => {
 
     <div class="loginSection">
         <div class="info">
-            <h2>Welcome, Ready to do some work?!</h2>
-            <p>See how things are at this moment.</p>
+            <h2>Let's create a project</h2>
+            <p>Create a project step by step.</p>
         </div>
         <form action="/create-project" method="POST" className="loginForm">
             <h2>Login</h2>
@@ -19,38 +19,38 @@ const CreateProject = () => {
                     <input type="text" className="inputFields" id="title" name="title" placeholder="My Project" />
                 </li>
                 <li>
-                    <label htmlFor="contractor">Password:</label>
+                    <label htmlFor="contractor">Contractor:</label>
                     <input type="text" className="inputFields" id="contractor" name="contractor" placeholder="Contractor" />
                 </li>
                 <li>
-                    <label htmlFor="location">Password:</label>
+                    <label htmlFor="location">Location:</label>
                     <input type="text" className="inputFields" id="location" name="location" placeholder="Location" />
                 </li>
                 <li>
-                    <label htmlFor="startDate">Password:</label>
+                    <label htmlFor="startDate">Start Date:</label>
                     <input type="text" className="inputFields" id="startDate" name="startDate" placeholder="Start Date" />
                 </li>
                 <li>
-                    <label htmlFor="dueDate">Password:</label>
+                    <label htmlFor="dueDate">Due Date:</label>
                     <input type="text" className="inputFields" id="dueDate" name="dueDate" placeholder="Due Date" />
                 </li>
                 <li>
-                    <label htmlFor="imageUrl">Password:</label>
+                    <label htmlFor="imageUrl">Image Url:</label>
                     <input type="text" className="inputFields" id="imageUrl" name="imageUrl" placeholder="Image Url" />
                 </li>
                 <li>
-                    <label htmlFor="description">Password:</label>
+                    <label htmlFor="description">Description:</label>
                     <input type="text" className="inputFields" id="description" name="description" placeholder="Description" />
                 </li>
                 <li>
-                    <label htmlFor="lead">Password:</label>
+                    <label htmlFor="lead">Lead:</label>
                     <input type="text" className="inputFields" id="lead" name="lead" placeholder="Lead" />
                 </li>
 
 
 
                 <li id="center-btn">
-                    <button id="login-btn">Login</button>
+                    <button id="login-btn">Create Project</button>
                 </li>
             </ul>
         </form>
