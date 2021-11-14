@@ -8,7 +8,7 @@ const Login = () => {
 
     <div class="loginSection">
         <div class="info">
-            <h2>Welcome, Ready to to some work?!</h2>
+            <h2>Welcome, Ready to do some work?!</h2>
             <p>See how things are at this moment.</p>
         </div>
         <form action="/login" method="POST" className="loginForm">
