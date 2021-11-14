@@ -12,6 +12,10 @@ const Register = () => {
             <h2>Sign Up</h2>
             <ul className="noBullet">
                 <li>
+                    <label htmlFor="specialty">Specialty:</label>
+                    <input type="text" className="inputFields" id="specialty" name="specialty" placeholder="Arch" />
+                </li>
+                <li>
                     <label htmlFor="title">Title:</label>
                     <input type="text" className="inputFields" id="title" name="title" placeholder="arch" />
                 </li>
