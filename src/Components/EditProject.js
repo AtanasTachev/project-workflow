@@ -1,6 +1,6 @@
 import '../register-login.css';
 
-const CreateProject = () => {
+const EditProject = () => {
 
     return (
 
@@ -8,11 +8,11 @@ const CreateProject = () => {
 
     <div class="loginSection">
         <div class="info">
-            <h2>Let's create a project</h2>
-            <p>Create a project step by step.</p>
+            <h2>Let's edit a project</h2>
+            <p>Edit a project step by step.</p>
         </div>
-        <form action="/create-project" method="POST" className="loginForm">
-            <h2>Create Project</h2>
+        <form action="/edit-project" method="POST" className="loginForm">
+            <h2>Edit Project</h2>
             <ul className="noBullet">
                 <li>
                     <label htmlFor="title">Title:</label>
@@ -50,7 +50,7 @@ const CreateProject = () => {
 
 
                 <li id="center-btn">
-                    <button id="login-btn">Create Project</button>
+                    <button id="login-btn">Edit Project</button>
                 </li>
             </ul>
         </form>
@@ -60,4 +60,4 @@ const CreateProject = () => {
     )
 }
 
-export default CreateProject
+export default EditProject

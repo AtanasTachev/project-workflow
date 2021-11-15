@@ -8,6 +8,7 @@ import Register from './Components/Register';
 import Login from './Components/Login'
 import Home from './Components/Home.js'
 import CreateProject from './Components/CreateProject';
+import EditProject from './Components/EditProject';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
               <Route path="/register" element={<Register />} />
               <Route path="/login" element={<Login />} />
               <Route path="/create-project" element={<CreateProject />} />
+              <Route path="/edit-project" element={<EditProject />} />
             </Routes>
           <Footer/>
         </div>
