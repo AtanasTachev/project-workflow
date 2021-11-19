@@ -1,14 +1,14 @@
 const router = require('express').Router();
-const postService = require('../services/projectService')
+const projectService = require('../services/projectService')
 
 router.get('/', async (req, res) => {
-    let posts = await postService.getAll();
-    res.render('home', { posts });
+    let projects = await projectService.getAll();
+    res.render('home', { projects });
 });
 
-router.get('/all-posts', async (req, res) => {
-    let posts = await postService.getAll();
-    res.render('all-posts', { posts });
+router.get('/all-projects', async (req, res) => {
+    let projects = await projectService.getAll();
+    res.render('all-project', { projects });
 }); 
 
 module.exports = router;

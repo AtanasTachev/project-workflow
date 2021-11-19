@@ -49,12 +49,12 @@ router.get('/logout', isAuth, (req, res) => {
 });
 
 
-router.get('/:userId/my-posts', isAuth, async (req, res) => {
+router.get('/:userId/my-projects', isAuth, async (req, res) => {
     try{
         let user = await authService.getUser(req.user._id);
         let email = req.user.email;
-        let posts = user.getPosts();
-        res.render('my-posts', {email, posts});
+        let projects = user.getProjects();
+        res.render('my-projects', {email, projects});
     } catch(error) {
         res.render('home', {error: error.message})
     }
