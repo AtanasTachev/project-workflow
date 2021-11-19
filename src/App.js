@@ -4,11 +4,11 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 import Navigation from './Components/Navigation';
 import Footer from './Components/Footer';
-import Register from './Components/Register';
-import Login from './Components/Login'
+import Register from './Components/auth/Register';
+import Login from './Components/auth/Login'
 import Home from './Components/Home.js'
-import CreateProject from './Components/CreateProject';
-import EditProject from './Components/EditProject';
+import CreateProject from './Components/project/CreateProject';
+import EditProject from './Components/project/EditProject';
 
 function App() {
   return (
