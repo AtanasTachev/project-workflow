@@ -1,6 +1,45 @@
+import { useNavigate } from 'react-router-dom';
+
+import * as authSevice from '../../services/authService';
 import '../../register-login.css';
 
-const Register = () => {
+const Register = ({onRegister}) => {
+
+    const navigate = useNavigate();
+
+    const onRegisterHandler = (e) => {
+        e.preventDefault();
+
+        let formData = new FormData(e.currentTarget);
+
+        let specialty = formData.get('specialty');
+        let title = formData.get('title');
+        let firstName = formData.get('firstName');
+        let lastName = formData.get('lastName');
+        let email = formData.get('email');
+        let password = formData.get('password');
+        let repeatPassword = formData.get('repeatPassword');
+
+        if (password !== repeatPassword) {
+            return;
+        }
+
+        let userData = {
+            specialty,
+            title,
+            firstName,
+            lastName,
+            email,
+            password
+        } 
+
+        authSevice.register(userData);
+
+        onRegister(userData);
+        navigate('/');
+    }
+
+
     return (
         // <h2> This is the register form </h2>)
 <section id="register-page">
@@ -8,7 +47,7 @@ const Register = () => {
         <div className="info">
                 <h2>To organize better your workflow and save time and effort while managing a project.</h2>
             </div>
-        <form action="register" method="POST" className="signupForm">
+        <form onSubmit={onRegisterHandler} method="POST" className="signupForm">
             <h2>Sign Up</h2>
             <ul className="noBullet">
                 <li>

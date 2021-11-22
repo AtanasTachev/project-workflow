@@ -6,8 +6,8 @@ const CreateProject = () => {
 
 <section id="login-page">
 
-    <div class="loginSection">
-        <div class="info">
+    <div className="loginSection">
+        <div className="info">
             <h2>Let's create a project</h2>
             <p>Create a project step by step.</p>
         </div>

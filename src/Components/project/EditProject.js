@@ -6,8 +6,8 @@ const EditProject = () => {
 
 <section id="login-page">
 
-    <div class="loginSection">
-        <div class="info">
+    <div className="loginSection">
+        <div className="info">
             <h2>Let's edit a project</h2>
             <p>Edit a project step by step.</p>
         </div>
