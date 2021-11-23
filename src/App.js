@@ -62,7 +62,8 @@ const onRegister = (userData) => {
 const onLogout = () => {
   setUserInfo({
     isAuthenticated: false,
-    user: null
+    user: null,
+    userData: null
   })
 };
 

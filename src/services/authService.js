@@ -6,8 +6,9 @@ export const register = (userData)  => {
     localStorage.setItem('userData', userData);
 };
 
-export const logout = (username)  => {
+export const logout = (username, userData)  => {
     localStorage.removeItem('username', username);
+    localStorage.removeItem('userData', userData);
 };
 
 export const getUser = (username)  => {
