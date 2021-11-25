@@ -1,7 +1,39 @@
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import * as projectService from '../../services/projectService'
+
 import '../../register-login.css';
 
 const CreateProject = () => {
 
+    const navigate = useNavigate();
+
+const onProjectCreate = (e) => {
+    e.preventDefault();
+    let formData = new FormData(e.currenttarget);
+    let title = formData.get('title');
+    let contractor = formData.get('contractor');
+    let location = formData.get('location');
+    let startDate = formData.get('startDate');
+    let dueDate = formData.get('dueDate');
+    let imageUrl = formData.get('imageUrl');
+    let description = formData.get('description');
+    let lead = formData.get('lead');
+
+    projectService.create({
+        title,
+        contractor,
+        location,
+        startDate,
+        dueDate,
+        imageUrl,
+        description,
+        lead
+    })
+    .then(result => {
+        navigate('/');
+    })
+}
     return (
 
 <section id="login-page">
@@ -11,7 +43,7 @@ const CreateProject = () => {
             <h2>Let's create a project</h2>
             <p>Create a project step by step.</p>
         </div>
-        <form action="/create-project" method="POST" className="loginForm">
+        <form method="POST" className="loginForm" onSubmit={onProjectCreate}>
             <h2>Create Project</h2>
             <ul className="noBullet">
                 <li>

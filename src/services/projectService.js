@@ -9,3 +9,15 @@ export const getAll = async () => {
 
 };
 
+export const create = async (projectData) => {
+    let response = await fetch(`${baseUrl}/projects`, {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(projectData)
+    });
+    let result = await response.json();
+    return result;
+}
+
