@@ -9,7 +9,9 @@ export const getAll = async () => {
 
 };
 
-export const create = async (projectData) => {
+export const create = async ({
+    projectData
+}) => {
     let response = await fetch(`${baseUrl}/projects`, {
         mode: 'no-cors',
         method: 'POST',
