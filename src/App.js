@@ -70,7 +70,7 @@ const onLogout = () => {
   return (
       <Router>
         <div className="App">
-          <Navigation user={userInfo.username}/>
+          <Navigation {...userInfo}/>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/register" element={<Register onRegister={onRegister}/>} />

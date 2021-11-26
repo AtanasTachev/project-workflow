@@ -1,4 +1,4 @@
-const baseUrl = 'https://workflow-project-server.herokuapp.com'
+const baseUrl = 'https://localhost:3030'
 
 export const getAll = async () => {
     let response = await fetch(`${baseUrl}/projects`)
@@ -12,7 +12,7 @@ export const getAll = async () => {
 export const create = async ({
     projectData
 }) => {
-    let response = await fetch(`${baseUrl}/projects`, {
+    let response = await fetch(`${baseUrl}/project-сreate`, {
         mode: 'no-cors',
         method: 'POST',
         headers: {
