@@ -7,8 +7,9 @@ import '../../register-login.css';
 const CreateProject = () => {
 
     const navigate = useNavigate();
+    const [project, setProject] = useState([]);
 
-const onProjectCreate = (e) => {
+const onProjectCreate = async (e) => {
     e.preventDefault();
     let formData = new FormData(e.currenttarget);
     let title = formData.get('title');
@@ -29,10 +30,10 @@ const onProjectCreate = (e) => {
         imageUrl,
         description,
         lead
-    })
-    .then(result => {
+    }).then(result => {
         navigate('/');
     })
+    
 }
     return (
 

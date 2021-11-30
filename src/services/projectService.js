@@ -1,4 +1,4 @@
-const baseUrl = 'https://localhost:3030'
+const baseUrl = 'http://localhost:3030';
 
 export const getAll = async () => {
     let response = await fetch(`${baseUrl}/projects`)
@@ -16,11 +16,12 @@ export const create = async ({
         mode: 'no-cors',
         method: 'POST',
         headers: {
-            'content-type': 'application/json'
+            'Content-type': 'application/json'
         },
         body: JSON.stringify(projectData)
     });
     let result = await response.json();
+    console.log(result);
     return result;
 }
 

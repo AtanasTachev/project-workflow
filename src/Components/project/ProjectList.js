@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import * as projectService from '../../services/projectService';
+import ProjectCard from "../project/ProjectCard";
 
 const ProjectList = () => {
 

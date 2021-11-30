@@ -32,8 +32,11 @@ const Register = ({onRegister}) => {
             email,
             password
         } 
-
+        // console.log(userData);
         authSevice.register(userData);
+        // .then(result => {
+        //     navigate('/');
+        // });
 
         onRegister(userData);
         navigate('/');

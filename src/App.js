@@ -73,9 +73,9 @@ const onLogout = () => {
           <Navigation {...userInfo}/>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/register" element={<Register onRegister={onRegister}/>} />
-              <Route path="/login" element={<Login onLogin={onLogin}/> } />
-              <Route path="/logout" element={<Logout onLogout={onLogout}/> } />
+              <Route path="/register" element={<Register onRegister={onRegister} />} />
+              <Route path="/login" element={<Login onLogin={onLogin} /> } />
+              <Route path="/logout" element={<Logout onLogout={onLogout} /> } />
               <Route path="/create-project" element={<CreateProject />} />
               <Route path="/edit-project" element={<EditProject />} />
             </Routes>
