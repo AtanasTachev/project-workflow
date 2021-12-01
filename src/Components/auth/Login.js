@@ -1,9 +1,13 @@
+import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { AuthContext } from '../../contexts/AuthContext';
 import * as authSevice from '../../services/authService';
 import '../../register-login.css';
 
-const Login = ({onLogin}) => {
+const Login = () => {
+
+    const { login } = useContext(AuthContext); 
 
     const navigate = useNavigate();
 
@@ -14,12 +18,17 @@ const Login = ({onLogin}) => {
         let formData = new FormData(e.currentTarget);
 
         let email = formData.get('email');
+        let password = formData.get('password');
 
-        authSevice.login(email);
+        authSevice.login(email, password)
+        .then((authData) => {
+            login(authData);
+            navigate('/');
+        })
+        .catch(err => {
+            console.log(err);
+        })
 
-        onLogin(email);
-
-        navigate('/');
     }
 
     return (
