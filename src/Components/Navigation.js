@@ -1,16 +1,23 @@
 import '../App.css';
 import {Link} from 'react-router-dom'
+import { useContext } from 'react';
 
-const Navigation = ({
-    isAuthenticated,
-    user}) => {
+import { AuthContext } from '../contexts/AuthContext';
+
+
+
+const Navigation = () => {
+
+    const { user } = useContext(AuthContext);
+    // console.log(user);
+
     return (<nav className="nav">
         <Link to="/" className="h2tag"> Project Workflow </Link>
         <ul> 
             <Link to="/" className="atag"> Home </Link>
-            { isAuthenticated  ?
+            { user.email  ?
               <>
-              <p className="atag">Welcome {user} </p>
+              <p className="atag">Welcome {user.email} </p>
             <Link to="/search" className="atag">Search</Link>
             <Link to="/create-project" className="atag">Create Project</Link>
             <Link to="/edit-project" className="atag">Edit Project</Link>

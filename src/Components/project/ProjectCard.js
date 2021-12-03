@@ -1,14 +1,15 @@
 import { Link } from 'react-router-dom';
+import '../../App.css';
 
 const projectCard = ({
     project
 }) => {
     return (
-        <li>
-            <h3>Project Title: {project.title}</h3>
+        <li className="h2tag">
+            <h4>Project Title: {project.title}</h4>
             <p>Location: {project.location}</p>
             <p>Lead: {project.lead}</p>
-            <img src={project.imageUrl} />
+            <img width="350" src={project.imageUrl} />
             <Link to={`/details/${project.id}`}>Details</Link>
         </li>
     );

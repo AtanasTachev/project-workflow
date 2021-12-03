@@ -1,11 +1,15 @@
+import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import * as authSevice from '../../services/authService';
+import { AuthContext } from '../../contexts/AuthContext';
+
 import '../../register-login.css';
 
-const Register = ({onRegister}) => {
+const Register = () => {
 
     const navigate = useNavigate();
+    const {login} = useContext(AuthContext);
 
     const onRegisterHandler = (e) => {
         e.preventDefault();
@@ -24,22 +28,22 @@ const Register = ({onRegister}) => {
             return;
         }
 
-        let userData = {
-            specialty,
-            title,
-            firstName,
-            lastName,
-            email,
-            password
-        } 
+        // let userData = {
+        //     specialty,
+        //     title,
+        //     firstName,
+        //     lastName,
+        //     email,
+        //     password
+        // } 
         // console.log(userData);
-        authSevice.register(userData);
-        // .then(result => {
-        //     navigate('/');
-        // });
+        authSevice.register(specialty, title, firstName, lastName, email, password, repeatPassword)
+        .then(authData => {
+            console.log(authData);
+            login(authData);
+            navigate('/');
+        });
 
-        onRegister(userData);
-        navigate('/');
     }
 
 
@@ -83,7 +87,7 @@ const Register = ({onRegister}) => {
                     <input type="password" className="inputFields" id="repeat-password" name="repeatPassword" placeholder="******" />
                 </li>
                 <li id="center-btn">
-                    <button id="join-btn">Join</button>
+                    <button type="submit" id="join-btn">Register</button>
                 </li>
             </ul>
         </form>

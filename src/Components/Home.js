@@ -7,6 +7,7 @@ const imageUrl = 'https://transitionbydesign.org/wp-content/uploads/2020/06/mano
 const Home = () => {
     return (
         <>
+         <ProjectList />
             <img className='center' src={imageUrl} alt='backgroundImg' />
             {/* {projects.map(project => <ProjectList />)} */}
         </>

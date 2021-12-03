@@ -13,13 +13,9 @@ import CreateProject from './Components/project/CreateProject';
 import EditProject from './Components/project/EditProject';
 
 const initialAuthState = {
-  isAuthenticated: false, 
-  specialty: '',
-  title: '',
-  firstName: '',
-  lastName: '',
+  _id: '',
   email: '',
-  password: ''
+  accessToken: ''
 };
 
 function App() {

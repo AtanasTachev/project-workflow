@@ -7,11 +7,10 @@ import '../../register-login.css';
 const CreateProject = () => {
 
     const navigate = useNavigate();
-    const [project, setProject] = useState([]);
 
-const onProjectCreate = async (e) => {
+const onProjectCreate = (e) => {
     e.preventDefault();
-    let formData = new FormData(e.currenttarget);
+    let formData = new FormData(e.currentTarget);
     let title = formData.get('title');
     let contractor = formData.get('contractor');
     let location = formData.get('location');
@@ -21,7 +20,7 @@ const onProjectCreate = async (e) => {
     let description = formData.get('description');
     let lead = formData.get('lead');
 
-    projectService.create({
+    let projectData = {
         title,
         contractor,
         location,
@@ -30,7 +29,10 @@ const onProjectCreate = async (e) => {
         imageUrl,
         description,
         lead
-    }).then(result => {
+    }
+    console.log(projectData);
+
+    projectService.create({...projectData}).then(result => {
         navigate('/');
     })
     
