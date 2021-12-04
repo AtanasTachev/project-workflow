@@ -39,7 +39,7 @@ const Register = () => {
         // console.log(userData);
         authSevice.register(specialty, title, firstName, lastName, email, password, repeatPassword)
         .then(authData => {
-            console.log(authData);
+            // console.log(authData);
             login(authData);
             navigate('/');
         });

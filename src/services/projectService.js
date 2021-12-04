@@ -1,4 +1,4 @@
-const baseUrl = 'http://localhost:3030';
+import {baseUrl} from '../constants';
 
 export const getAll = async () => {
     let response = await fetch(`${baseUrl}/projects`)
@@ -9,18 +9,19 @@ export const getAll = async () => {
 
 };
 
-export const create = async (projectData) => {
+export const create = async (title, contractor, location, startDate, dueDate, imageUrl, description, lead) => {
+    console.log(title, contractor, location, startDate, dueDate, imageUrl, description, lead);
     let response = await fetch(`${baseUrl}/projects/create`, {
-        mode: 'no-cors',
         method: 'POST',
+        // mode: 'no-cors',
         headers: {
             'content-type': 'application/json'
         },
-        body: JSON.stringify({...projectData})
+        body: JSON.stringify({title, contractor, location, startDate, dueDate, imageUrl, description, lead})
     });
     console.log(response);
     let result = await response.json();
-    console.log(projectData);
+    // console.log(title, contractor, location, startDate, dueDate, imageUrl, description, lead);
     console.log(result);
     return result;
 };

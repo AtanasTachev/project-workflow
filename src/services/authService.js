@@ -1,9 +1,8 @@
-const baseUrl = 'http://localhost:3030';
+import {baseUrl} from '../constants';
 
 export const login = async (email, password)  => {
     let response = await fetch(`${baseUrl}/users/login`, {
         method: 'POST',
-        mode: 'no-cors',
         headers: {
             'content-type': 'application/json'
         },
@@ -38,9 +37,9 @@ export const logout = (token)  => {
 };
 
 export const getUser = ()  => {
-    let user = localStorage.getItem('user');
+    // let user = localStorage.getItem('user');
 
-    return user;
+    // return user;
 };
 
 export const isAuthenticated = ()  => {

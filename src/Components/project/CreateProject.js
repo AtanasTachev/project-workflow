@@ -20,19 +20,19 @@ const onProjectCreate = (e) => {
     let description = formData.get('description');
     let lead = formData.get('lead');
 
-    let projectData = {
-        title,
-        contractor,
-        location,
-        startDate,
-        dueDate,
-        imageUrl,
-        description,
-        lead
-    }
-    console.log(projectData);
+    // let projectData = {
+    //     title,
+    //     contractor,
+    //     location,
+    //     startDate,
+    //     dueDate,
+    //     imageUrl,
+    //     description,
+    //     lead
+    // }
+    // console.log(title, contractor, location, startDate, dueDate, imageUrl, description, lead);
 
-    projectService.create({...projectData}).then(result => {
+    projectService.create(title, contractor, location, startDate, dueDate, imageUrl, description, lead).then(result => {
         navigate('/');
     })
     
