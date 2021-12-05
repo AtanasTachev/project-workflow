@@ -29,10 +29,9 @@ const EditProject = () => {
         let lead = formData.get('lead');
 
     
-        let editedProject = await projectService.edit(projectId, title, contractor, location, startDate, dueDate, imageUrl, description, lead).then(result => {
+        await projectService.edit(projectId, title, contractor, location, startDate, dueDate, imageUrl, description, lead).then(result => {
             navigate('/');
         })
-        console.log(editedProject);
     }
     return (
 

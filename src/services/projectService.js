@@ -29,14 +29,14 @@ export const create = async ({title, contractor, location, startDate, dueDate, i
     return result;
 };
 
-export const edit = async (projectId, ...projectData ) => {
+export const edit = async (projectId, title, contractor, location, startDate, dueDate, imageUrl, description, lead ) => {
 
     let response = await fetch(`${baseUrl}/projects/${projectId}/edit`, {
         method: 'PUT',
         headers: {
             'content-type': 'application/json'
         },
-        body: JSON.stringify({...projectData})
+        body: JSON.stringify({title, contractor, location, startDate, dueDate, imageUrl, description, lead})
     });
     let result = await response.json();
     return result;
