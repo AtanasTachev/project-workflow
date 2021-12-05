@@ -16,6 +16,13 @@ const ProjectDetails = () => {
         })
     })
 
+
+    const ownerButtons = (
+        <>
+            <Link to={`/${projectId}/edit`} className="atag">Edit Project</Link>
+            <Link to={`/${projectId}/delete`} className="atag">Delete Project</Link>
+        </>
+    )
     return (
         <li className="h2tag">
             <h4>Project Title: {project.title}</h4>
@@ -26,8 +33,10 @@ const ProjectDetails = () => {
             <p>Description: {project.description}</p>
             <p>Lead: {project.lead}</p>
             <img width="350" src={project.imageUrl} />
-            <Link to={`/${projectId}/edit`} className="atag">Edit Project</Link>
-            <Link to={`/${projectId}/delete`} className="atag">Delete Project</Link>
+            {user._id && user._id == project.creator
+                ? ownerButtons
+                :''
+            }
         </li>
     )
 }

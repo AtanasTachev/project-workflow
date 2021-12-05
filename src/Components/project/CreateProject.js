@@ -1,26 +1,32 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as projectService from '../../services/projectService'
+import { useContext } from 'react';
+import { AuthContext } from '../../contexts/AuthContext';
 
 import '../../register-login.css';
 
 const CreateProject = () => {
 
+    const { user } = useContext(AuthContext);
+    
     const navigate = useNavigate();
+    
+    const onProjectCreate = (e) => {
+        e.preventDefault();
+        let formData = new FormData(e.currentTarget);
+        let title = formData.get('title');
+        let contractor = formData.get('contractor');
+        let location = formData.get('location');
+        let startDate = formData.get('startDate');
+        let dueDate = formData.get('dueDate');
+        let imageUrl = formData.get('imageUrl');
+        let description = formData.get('description');
+        let lead = formData.get('lead');
+        const creator = user._id
+        // console.log(creator);
 
-const onProjectCreate = (e) => {
-    e.preventDefault();
-    let formData = new FormData(e.currentTarget);
-    let title = formData.get('title');
-    let contractor = formData.get('contractor');
-    let location = formData.get('location');
-    let startDate = formData.get('startDate');
-    let dueDate = formData.get('dueDate');
-    let imageUrl = formData.get('imageUrl');
-    let description = formData.get('description');
-    let lead = formData.get('lead');
-
-    projectService.create(title, contractor, location, startDate, dueDate, imageUrl, description, lead).then(result => {
+    projectService.create({title, contractor, location, startDate, dueDate, imageUrl, description, lead, creator}).then(result => {
         navigate('/');
     })
     
