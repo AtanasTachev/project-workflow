@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
-import * as projectService from '../../services/projectService.js';
-import { AuthContext } from "../../contexts/AuthContext";
+import * as projectService from '../../../services/projectService.js';
+import { AuthContext } from "../../../contexts/AuthContext";
 
 const ProjectDetails = () => {
     const navigate = useNavigate();

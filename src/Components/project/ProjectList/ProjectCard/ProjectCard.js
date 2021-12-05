@@ -1,9 +1,8 @@
-import { useState, useEffect } from "react";
-import * as projectService from '../../services/projectService';
+
 import { Link } from 'react-router-dom';
 import { useContext } from "react";
-import { AuthContext } from "../../contexts/AuthContext";
-import '../../App.css';
+import { AuthContext } from "../../../../contexts/AuthContext";
+import './card.css';
 
 const ProjectCard = ({project}) => {
 
@@ -16,9 +15,9 @@ const ProjectCard = ({project}) => {
             <h4>Project Title: {project.title}</h4>
             <p>Location: {project.location}</p>
             <p>Lead: {project.lead}</p>
-            <img width="350" src={project.imageUrl} />
+            <img width="350" height="200" src={project.imageUrl} />
             { isAuth ?
-            <Link to={`/${project._id}/details`}>Details</Link>
+            <Link className="atag" to={`/${project._id}/details`}>Details</Link>
             : ''
             }
         </li>

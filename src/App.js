@@ -11,7 +11,7 @@ import Logout from './Components/auth/Logout';
 import Home from './Components/Home.js';
 import CreateProject from './Components/project/CreateProject/CreateProject';
 import EditProject from './Components/project/EditProject/EditProject';
-import ProjectDetails from './Components/project/ProjectDetails';
+import ProjectDetails from './Components/project/ProjectDetails/ProjectDetails';
 
 const initialAuthState = {
   _id: '',
