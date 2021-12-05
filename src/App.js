@@ -5,12 +5,12 @@ import { AuthContext } from './contexts/AuthContext';
 import useLocalStorage from './hooks/useLocalStorage';
 import Navigation from './Components/Navigation';
 import Footer from './Components/Footer';
-import Register from './Components/auth/Register';
-import Login from './Components/auth/Login';
+import Register from './Components/auth/Register/Register';
+import Login from './Components/auth/Login/Login';
 import Logout from './Components/auth/Logout';
 import Home from './Components/Home.js';
-import CreateProject from './Components/project/CreateProject';
-import EditProject from './Components/project/EditProject';
+import CreateProject from './Components/project/CreateProject/CreateProject';
+import EditProject from './Components/project/EditProject/EditProject';
 import ProjectDetails from './Components/project/ProjectDetails';
 
 const initialAuthState = {

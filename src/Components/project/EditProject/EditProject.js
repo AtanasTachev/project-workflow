@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from "react-router-dom";
-import * as projectService from '../../services/projectService';
-import '../../register-login.css';
+import * as projectService from '../../../services/projectService';
+import './form.css';
 
 const EditProject = () => {
     

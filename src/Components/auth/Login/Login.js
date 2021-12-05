@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { AuthContext } from '../../contexts/AuthContext';
-import * as authSevice from '../../services/authService';
-import '../../register-login.css';
+import { AuthContext } from '../../../contexts/AuthContext';
+import * as authSevice from '../../../services/authService';
+import './form.css';
 
 const Login = () => {
 

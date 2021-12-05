@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import * as projectService from '../../services/projectService'
+import * as projectService from '../../../services/projectService'
 import { useContext } from 'react';
-import { AuthContext } from '../../contexts/AuthContext';
+import { AuthContext } from '../../../contexts/AuthContext';
 
-import '../../register-login.css';
+import './form.css';
 
 const CreateProject = () => {
 
