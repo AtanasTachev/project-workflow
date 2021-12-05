@@ -25,7 +25,6 @@ export const register = async (specialty, title, firstName, lastName, email, pas
         },
         body: JSON.stringify({specialty, title, firstName, lastName, email, password, repeatPassword})
     });
-    console.log(response);
     let result = await response.json();
     console.log(result);
     return result;

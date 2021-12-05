@@ -49,11 +49,27 @@ const Register = () => {
             <ul className="noBullet">
                 <li>
                     <label htmlFor="specialty">Specialty:</label>
-                    <input type="text" className="inputFields" id="specialty" name="specialty" placeholder="Arch" />
+                    {/* <input type="select" className="inputFields" id="specialty" name="specialty" placeholder="Arch" /> */}
+                    <select name="specialty" id="specialty" className="inputFields">
+                          <option value="Arch">Arch</option>
+                          <option value="Struct">Struct</option>
+                          <option value="WSS">WSS</option>
+                          <option value="El">El</option>
+                          <option value="HVAC">HVAC</option>
+                          <option value="FS">FS</option>
+                          <option value="LS">LS</option>
+                          <option value="GD">GD</option>
+                    </select>
                 </li>
                 <li>
                     <label htmlFor="title">Title:</label>
-                    <input type="text" className="inputFields" id="title" name="title" placeholder="arch" />
+                    {/* <input type="text" className="inputFields" id="title" name="title" placeholder="arch" /> */}
+                    <select name="title" id="title" className="inputFields">
+                          <option value="arch.">arch.</option>
+                          <option value="eng.">eng.</option>
+                          <option value="l.arch.">l.arch.</option>
+                    </select>
+
                 </li>
                 <li>
                     <label htmlFor="first-name">First Name:</label>
