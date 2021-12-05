@@ -9,19 +9,36 @@ export const getAll = async () => {
 
 };
 
+export const getOne = async (projectId) => {
+    let response = await fetch(`${baseUrl}/projects/${projectId}/details`)
+    let project = await response.json();
+    return project;
+
+};
+
 export const create = async (title, contractor, location, startDate, dueDate, imageUrl, description, lead) => {
-    console.log(title, contractor, location, startDate, dueDate, imageUrl, description, lead);
+    // console.log(title, contractor, location, startDate, dueDate, imageUrl, description, lead);
     let response = await fetch(`${baseUrl}/projects/create`, {
         method: 'POST',
-        // mode: 'no-cors',
         headers: {
             'content-type': 'application/json'
         },
         body: JSON.stringify({title, contractor, location, startDate, dueDate, imageUrl, description, lead})
     });
-    console.log(response);
     let result = await response.json();
+    return result;
+};
+
+export const edit = async (projectId, {title, contractor, location, startDate, dueDate, imageUrl, description, lead} ) => {
     // console.log(title, contractor, location, startDate, dueDate, imageUrl, description, lead);
+    let response = await fetch(`${baseUrl}/projects/${projectId}/edit`, {
+        method: 'PUT',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify({title, contractor, location, startDate, dueDate, imageUrl, description, lead})
+    });
+    let result = await response.json();
     console.log(result);
     return result;
 };

@@ -28,18 +28,8 @@ const Register = () => {
             return;
         }
 
-        // let userData = {
-        //     specialty,
-        //     title,
-        //     firstName,
-        //     lastName,
-        //     email,
-        //     password
-        // } 
-        // console.log(userData);
         authSevice.register(specialty, title, firstName, lastName, email, password, repeatPassword)
         .then(authData => {
-            // console.log(authData);
             login(authData);
             navigate('/');
         });

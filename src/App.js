@@ -11,6 +11,7 @@ import Logout from './Components/auth/Logout';
 import Home from './Components/Home.js';
 import CreateProject from './Components/project/CreateProject';
 import EditProject from './Components/project/EditProject';
+import ProjectDetails from './Components/project/ProjectDetails';
 
 const initialAuthState = {
   _id: '',
@@ -40,7 +41,8 @@ const logout = () => {
               <Route path="/login" element={<Login /> } />
               <Route path="/logout" element={<Logout /> } />
               <Route path="/create-project" element={<CreateProject />} />
-              <Route path="/edit-project" element={<EditProject />} />
+              <Route path="/:projectId/edit" element={<EditProject />} />
+              <Route path="/:projectId/details" element={<ProjectDetails />} />
             </Routes>
           <Footer/>
         </div>

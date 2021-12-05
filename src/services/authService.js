@@ -32,8 +32,13 @@ export const register = async (specialty, title, firstName, lastName, email, pas
     return result;
 };
 
-export const logout = (token)  => {
-    return fetch(`${baseUrl}/users/logout`);
+export const logout = ()  => {
+    return fetch(`${baseUrl}/users/logout`, {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        }
+    });
 };
 
 export const getUser = ()  => {
