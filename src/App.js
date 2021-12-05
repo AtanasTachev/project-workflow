@@ -42,7 +42,6 @@ const logout = () => {
               <Route path="/logout" element={<Logout /> } />
               <Route path="/create-project" element={<CreateProject />} />
               <Route path="/:projectId/edit" element={<EditProject />} />
-              <Route path="/:projectId/edit" element={<EditProject />} />
               <Route path="/:projectId/details" element={<ProjectDetails />} />
             </Routes>
           <Footer/>

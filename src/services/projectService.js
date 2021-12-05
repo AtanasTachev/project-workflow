@@ -42,3 +42,9 @@ export const edit = async (projectId, title, contractor, location, startDate, du
     return result;
 };
 
+export const deleteProject = async (projectId) => {
+    return fetch(`${baseUrl}/projects/${projectId}/delete`, {
+        method: 'DELETE'
+    }).then(res => res.json());
+}
+

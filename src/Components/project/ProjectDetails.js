@@ -16,11 +16,19 @@ const ProjectDetails = () => {
         })
     })
 
+    const deleteHandler = (e) => {
+        e.preventDefault();
+
+        projectService.deleteProject( projectId )
+            .then(() => {
+                navigate('/');
+            })
+    }
 
     const ownerButtons = (
         <>
             <Link to={`/${projectId}/edit`} className="atag">Edit Project</Link>
-            <Link to={`/${projectId}/delete`} className="atag">Delete Project</Link>
+            <Link to={`/${projectId}/delete`} onClick={deleteHandler} className="atag">Delete Project</Link>
         </>
     )
     return (
