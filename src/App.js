@@ -12,6 +12,7 @@ import Home from './Components/Home.js';
 import CreateProject from './Components/project/CreateProject/CreateProject';
 import EditProject from './Components/project/EditProject/EditProject';
 import ProjectDetails from './Components/project/ProjectDetails/ProjectDetails';
+import MyProfile from './Components/personal/MyProfile/MyProfile'
 
 const initialAuthState = {
   _id: '',
@@ -43,6 +44,7 @@ const logout = () => {
               <Route path="/create-project" element={<CreateProject />} />
               <Route path="/:projectId/edit" element={<EditProject />} />
               <Route path="/:projectId/details" element={<ProjectDetails />} />
+              <Route path="/:userId/myProfile" element={<MyProfile />} />
             </Routes>
           <Footer/>
         </div>
