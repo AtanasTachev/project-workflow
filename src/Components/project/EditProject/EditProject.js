@@ -14,7 +14,7 @@ const EditProject = () => {
         .then(result => {
             setProject(result);
         })
-    }, []);
+    }, [projectId]);
 
     const onProjectEdit = async (e) => {
         e.preventDefault();

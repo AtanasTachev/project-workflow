@@ -15,7 +15,7 @@ const UserDetails = () => {
         .then(userResult => {
             setUserInfo(userResult);
         })
-    }, [])
+    }, [userId])
 
      return (
         <li className="h2tag">

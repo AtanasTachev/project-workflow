@@ -15,7 +15,7 @@ const MyProfile = () => {
         .then(userResult => {
             setUserInfo(userResult);
         })
-    }, [])
+    }, [userId])
 
 
     const deleteHandler = (e) => {

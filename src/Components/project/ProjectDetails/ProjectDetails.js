@@ -14,7 +14,7 @@ const ProjectDetails = () => {
         .then(projectResult => {
             setProject(projectResult);
         })
-    }, [])
+    }, [projectId])
 
     const deleteHandler = (e) => {
         e.preventDefault();
@@ -40,7 +40,7 @@ const ProjectDetails = () => {
             <p>Due Date: {project.dueDate}</p>
             <p>Description: {project.description}</p>
             <p>Lead: {project.lead}</p>
-            <img width="350" src={project.imageUrl} />
+            <img width="350" src={project.imageUrl} alt="project"/>
             {user._id && user._id == project.creator
                 ? ownerButtons
                 :''
