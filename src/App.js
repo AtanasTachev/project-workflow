@@ -14,7 +14,7 @@ import EditProject from './Components/project/EditProject/EditProject';
 import ProjectDetails from './Components/project/ProjectDetails/ProjectDetails';
 import MyProfile from './Components/personal/MyProfile/MyProfile'
 import AllUsers from './Components/personal/AllUsers/AllUsers';
-import UserDetails from './Components/personal/UserDetails/UserDetails';
+import UserDetails from './Components/personal/AllUsers/UserCard/UserDetails/UserDetails';
 
 const initialAuthState = {
   _id: '',

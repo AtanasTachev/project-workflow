@@ -3,21 +3,21 @@ import { Link } from 'react-router-dom';
 // import { AuthContext } from "../../../../contexts/AuthContext";
 import './card.css';
 
-const UserCard = ({user}) => {
+const UserCard = ({userInfo}) => {
 
     // const { user } = useContext(AuthContext);
-    const isAuth = Boolean(user)
-
-
+    const isAuth = Boolean(userInfo)
+    const userId = userInfo._id;
+    
     return (
         <li className="h2tag">
-            <h4>Full Name: {`${user.firstName} ${user.lastName}`}</h4>
-            <p>Title: {user.title}</p>
-            <p>Specialty: {user.specialty}</p>
+            <h4>Full Name: {`${userInfo.firstName} ${userInfo.lastName}`}</h4>
+            <p>Title: {userInfo.title}</p>
+            <p>Specialty: {userInfo.specialty}</p>
             { isAuth ?
-            <Link className="atag" to={`/users/${user._id}/details`}>Details</Link>
+            <Link className="atag" to={`/users/${userInfo._id}/details`}>Details</Link>
             : ''
-            }
+        }
         </li>
     );
 };
