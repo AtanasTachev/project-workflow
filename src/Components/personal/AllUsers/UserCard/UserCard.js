@@ -6,7 +6,7 @@ import './card.css';
 const UserCard = ({user}) => {
 
     // const { user } = useContext(AuthContext);
-    const isAuth = Boolean('')
+    const isAuth = Boolean(user)
 
 
     return (
@@ -15,7 +15,7 @@ const UserCard = ({user}) => {
             <p>Title: {user.title}</p>
             <p>Specialty: {user.specialty}</p>
             { isAuth ?
-            <Link className="atag" to={`/${user._id}/details`}>Details</Link>
+            <Link className="atag" to={`/users/${user._id}/details`}>Details</Link>
             : ''
             }
         </li>

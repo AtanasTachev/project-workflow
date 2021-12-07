@@ -15,9 +15,9 @@ const ProjectCard = ({project}) => {
             <h4>Project Title: {project.title}</h4>
             <p>Location: {project.location}</p>
             <p>Lead: {project.lead}</p>
-            <img width="350" height="200" src={project.imageUrl} alt="project"/>
+            <img width="350" height="200" src={project.imageUrl} alt="projectImg"/>
             { isAuth ?
-            <Link className="atag" to={`/${project._id}/details`}>Details</Link>
+            <Link className="atag" to={`/projects/${project._id}/details`}>Details</Link>
             : ''
             }
         </li>

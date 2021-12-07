@@ -43,12 +43,12 @@ const logout = () => {
               <Route path="/register" element={<Register />} />
               <Route path="/login" element={<Login /> } />
               <Route path="/logout" element={<Logout /> } />
+              <Route path="/:userId/myProfile" element={<MyProfile />} />
+              <Route path="/users/:userId/details" element={<UserDetails />} />
+              <Route path="/allUsers" element={<AllUsers />} />
               <Route path="/create-project" element={<CreateProject />} />
               <Route path="/:projectId/edit" element={<EditProject />} />
-              <Route path="/:projectId/details" element={<ProjectDetails />} />
-              <Route path="/:userId/myProfile" element={<MyProfile />} />
-              <Route path="/:userId/details" element={<UserDetails />} />
-              <Route path="/allUsers" element={<AllUsers />} />
+              <Route path="/projects/:projectId/details" element={<ProjectDetails />} />
             </Routes>
           <Footer/>
         </div>
