@@ -3,7 +3,7 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import * as authService from '../../../services/authService';
 import { AuthContext } from "../../../contexts/AuthContext";
 
-const MyProfile = () => {
+const UserDetails = () => {
     const navigate = useNavigate();
     const { user } = useContext(AuthContext);
     const [userInfo, setUserInfo] = useState({});
@@ -17,18 +17,7 @@ const MyProfile = () => {
         })
     }, [])
 
-
-    const deleteHandler = (e) => {
-        e.preventDefault();
-
-        authService.deleteUser( userId )
-            .then(() => {
-                navigate('/');
-            })
-    }
-
-
-    return (
+     return (
         <li className="h2tag">
             <h4>Name: {`${userInfo.firstName} ${userInfo.lastName}`}</h4>
             <p>Title: {userInfo.title}</p>
@@ -36,9 +25,8 @@ const MyProfile = () => {
             <p>Email: {userInfo.email}</p>
             <p>Projects joined: {userInfo.projectsJoined}</p>
             <p>My projects: {userInfo.myProjects}</p>
-            <Link to={`/${userId}/delete`} onClick={deleteHandler} className="atag">Delete User</Link>
         </li>
     )
 }
 
-export default MyProfile;
+export default UserDetails;

@@ -13,6 +13,8 @@ import CreateProject from './Components/project/CreateProject/CreateProject';
 import EditProject from './Components/project/EditProject/EditProject';
 import ProjectDetails from './Components/project/ProjectDetails/ProjectDetails';
 import MyProfile from './Components/personal/MyProfile/MyProfile'
+import AllUsers from './Components/personal/AllUsers/AllUsers';
+import UserDetails from './Components/personal/UserDetails/UserDetails';
 
 const initialAuthState = {
   _id: '',
@@ -45,6 +47,8 @@ const logout = () => {
               <Route path="/:projectId/edit" element={<EditProject />} />
               <Route path="/:projectId/details" element={<ProjectDetails />} />
               <Route path="/:userId/myProfile" element={<MyProfile />} />
+              <Route path="/:userId/details" element={<UserDetails />} />
+              <Route path="/allUsers" element={<AllUsers />} />
             </Routes>
           <Footer/>
         </div>

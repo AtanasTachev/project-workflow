@@ -14,7 +14,7 @@ const ProjectDetails = () => {
         .then(projectResult => {
             setProject(projectResult);
         })
-    })
+    }, [])
 
     const deleteHandler = (e) => {
         e.preventDefault();

@@ -18,7 +18,7 @@ const Navigation = () => {
             { user.email  ?
               <>
               <p className="atag">Welcome {user.email} </p>
-            <Link to="/search" className="atag">Search</Link>
+            <Link to="/allUsers" className="atag">All Users</Link>
             <Link to="/create-project" className="atag">Create Project</Link>
             <Link to="/:userId/myProfile" className="atag">My profile</Link> 
             <Link to="/logout" className="atag">Logout</Link> </>

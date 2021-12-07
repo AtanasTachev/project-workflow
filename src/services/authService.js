@@ -39,11 +39,23 @@ export const logout = ()  => {
     });
 };
 
-export const getUser = ()  => {
-    // let user = localStorage.getItem('user');
-
-    // return user;
+export const getUser = async (userId)  => {
+    let response = await fetch(`${baseUrl}/users/${userId}`);
+    let user = await response.json();
+    return user;
 };
+
+export const getAllUsers = async ()  => {
+    let response = await fetch(`${baseUrl}/users`);
+    let users = await response.json();
+    return users;
+};
+
+export const deleteUser = async (usertId) => {
+    return fetch(`${baseUrl}/users/${usertId}/delete`, {
+        method: 'DELETE'
+    }).then(res => res.json());
+}
 
 export const isAuthenticated = ()  => {
     return Boolean(getUser());
