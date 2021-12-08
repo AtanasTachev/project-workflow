@@ -1,21 +1,18 @@
-import { useState, useEffect, useContext } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import * as authService from '../../../../../services/authService';
-import { AuthContext } from "../../../../../contexts/AuthContext";
-
-import id from '../UserCard'
-console.log(id);
 
 const UserDetails = () => {
-    const navigate = useNavigate();
-    const [userInfo, setUserInfo] = useState({});
+    const {userId} = useParams();
     
+    const [userInfo, setUserInfo] = useState({});
+
     useEffect(() => {
-        authService.getUser()
+        authService.getUser(userId)
         .then(userResult => {
             setUserInfo(userResult);
         })
-    }, [])
+    }, [userId])
 
      return (
         <li className="h2tag">
