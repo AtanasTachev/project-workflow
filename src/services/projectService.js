@@ -48,3 +48,23 @@ export const deleteProject = async (projectId) => {
     }).then(res => res.json());
 }
 
+export const joinProject = async (projectId, userId) => {
+    return fetch(`${baseUrl}/projects/${projectId}/join`, {
+        method: 'PATCH',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify({projectId, userId})
+    }).then(res => res.json());
+}
+
+export const leaveProject = async (projectId) => {
+    return fetch(`${baseUrl}/projects/${projectId}/leave`, {
+        method: 'PATCH',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify({})
+    }).then(res => res.json());
+}
+

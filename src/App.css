@@ -43,6 +43,20 @@
   justify-content: space-between;
 }
 
+.aRedTag {
+  padding: 1px;
+  font-size: 1em;
+  margin-top: 0.7rem;
+  float:inherit;
+  color: aliceblue;
+  display:inline;
+  background-color: rgb(236, 34, 15);
+  border-radius: 0.35em;
+  margin-left: 0.5em;
+  margin-right: 1em;
+  justify-content: space-between;
+}
+
 .h2tag {
   padding: 1px;
   float:left;

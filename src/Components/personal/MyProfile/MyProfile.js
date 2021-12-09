@@ -36,7 +36,7 @@ const MyProfile = () => {
             <p>Email: {userInfo.email}</p>
             <p>Projects joined: {userInfo.projectsJoined}</p>
             <p>My projects: {userInfo.myProjects}</p>
-            <Link to={`/${userId}/delete`} onClick={deleteHandler} className="atag">Delete User</Link>
+            <Link to={`/${userId}/delete`} onClick={deleteHandler} className="aRedTag">Delete User</Link>
         </li>
     )
 }

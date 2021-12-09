@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { isAuth } from '../../../hoc/isAuth';
 import { useNavigate } from 'react-router-dom';
 import * as projectService from '../../../services/projectService'
 import { useContext } from 'react';
@@ -89,4 +89,4 @@ const CreateProject = () => {
     )
 }
 
-export default CreateProject;
+export default isAuth(CreateProject);
