@@ -4,6 +4,8 @@ import * as projectService from '../../../services/projectService.js';
 import { AuthContext } from "../../../contexts/AuthContext";
 import { isAuth } from '../../../hoc/isAuth';
 
+import './card.css'
+
 
 const ProjectDetails = () => {
     const navigate = useNavigate();
@@ -47,8 +49,8 @@ const ProjectDetails = () => {
 
     const ownerButtons = (
         <>
-            <Link to={`/${projectId}/edit`} className="atag">Edit Project</Link>
-            <Link to={`/${projectId}/delete`} onClick={deleteHandler} className="atag">Delete Project</Link>
+            <Link to={`/${projectId}/edit`} className="aBlueTag">Edit Project</Link>
+            <Link to={`/${projectId}/delete`} onClick={deleteHandler} className="aRedTag">Delete Project</Link>
         </>
     )
 
