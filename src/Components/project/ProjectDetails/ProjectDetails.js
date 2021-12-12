@@ -46,6 +46,10 @@ const ProjectDetails = () => {
                 navigate('/');
             })
     }
+    console.log(user._id);
+    let team = project.team;
+    console.log(team);
+    // const isJoined = team.some( x => x === user._id);
 
     const ownerButtons = (
         <>
@@ -70,6 +74,8 @@ const ProjectDetails = () => {
             <p>Due Date: {project.dueDate}</p>
             <p>Description: {project.description}</p>
             <p>Lead: {project.lead}</p>
+            <p>Team: {project.team}</p>
+
             <img width="350" src={project.imageUrl} alt="projectImg"/>
             {user._id && user._id === project.creator
                 ? ownerButtons
@@ -79,4 +85,4 @@ const ProjectDetails = () => {
     )
 }
 
-export default isAuth(ProjectDetails);
+export default ProjectDetails;

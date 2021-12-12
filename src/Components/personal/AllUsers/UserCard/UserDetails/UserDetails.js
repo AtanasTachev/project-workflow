@@ -14,13 +14,15 @@ const UserDetails = () => {
         })
     }, [userId])
 
+    // console.log(userInfo.getJoinedProjects());
+
      return (
         <li className="h2tag">
             <h4>Name: {`${userInfo.firstName} ${userInfo.lastName}`}</h4>
             <p>Title: {userInfo.title}</p>
             <p>Specialty: {userInfo.specialty}</p>
             <p>Email: {userInfo.email}</p>
-            <p>Projects joined: {userInfo.projectsJoined}</p>
+            <p>Projects joined: {userInfo.getJoinedProjects}</p>
             <p>My projects: {userInfo.myProjects}</p>
         </li>
     )

@@ -1,0 +1,23 @@
+.notification {
+    position: absolute;
+    right: 50px;
+    top: 50px;
+    width: 400px;
+    height: 100px;
+    background-color: brown;
+    opacity: 75%;
+    color: white;
+    border-radius: .5rem;
+}
+
+.closeSign {
+    position: inherit;
+    top: 10px;
+    right: 10px;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+}

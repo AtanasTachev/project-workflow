@@ -9,6 +9,7 @@ export const getAll = async () => {
 
 };
 
+
 export const getOne = async (projectId) => {
     let response = await fetch(`${baseUrl}/projects/${projectId}/details`)
     let project = await response.json();
@@ -58,13 +59,13 @@ export const joinProject = async (projectId, userId) => {
     }).then(res => res.json());
 }
 
-export const leaveProject = async (projectId) => {
+export const leaveProject = async (projectId, userId) => {
     return fetch(`${baseUrl}/projects/${projectId}/leave`, {
         method: 'PATCH',
         headers: {
             'content-type': 'application/json'
         },
-        body: JSON.stringify({})
+        body: JSON.stringify({projectId, userId})
     }).then(res => res.json());
 }
 

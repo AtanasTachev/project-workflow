@@ -89,4 +89,4 @@ const CreateProject = () => {
     )
 }
 
-export default isAuth(CreateProject);
+export default CreateProject;

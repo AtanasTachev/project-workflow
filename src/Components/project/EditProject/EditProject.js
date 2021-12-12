@@ -93,4 +93,4 @@ const EditProject = () => {
     )
 }
 
-export default isAuth(EditProject);
+export default EditProject;
