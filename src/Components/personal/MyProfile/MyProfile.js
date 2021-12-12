@@ -1,34 +1,35 @@
 import { useState, useEffect, useContext } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import * as authService from '../../../services/authService';
-import * as projectService from '../../../services/projectService';
+// import * as projectService from '../../../services/projectService';
 import { AuthContext } from "../../../contexts/AuthContext";
 
 const MyProfile = () => {
     const navigate = useNavigate();
     const { user } = useContext(AuthContext);
     const [userInfo, setUserInfo] = useState({});
-    const [projectInfo, setProjectInfo] = useState({});
-
-    
-    const userId = user._id;
+    // const [projectInfo, setProjectInfo] = useState({});
+        
+    // const userId = useParams();
+    // console.log(userId);
+    // console.log(user);
 
     useEffect(() => {
-        authService.getUser(userId)
+        authService.getUser(user._id)
         .then(userResult => {
             setUserInfo(userResult);
         })
-    }, [userId])
+    }, [user._id])
 
     const deleteHandler = (e) => {
         e.preventDefault();
 
-        authService.deleteUser( userId )
+        authService.deleteUser( user._id )
             .then(() => {
                 navigate('/');
             })
     }
-
+// console.log(userInfo);
     // const myJoinedProjects = userInfo.getJoinedProjects();
 
 
@@ -40,7 +41,7 @@ const MyProfile = () => {
             <p>Email: {userInfo.email}</p>
             <p>Projects joined: {}</p>
             <p>My projects: {}</p>
-            <Link to={`/${userId}/delete`} onClick={deleteHandler} className="aRedTag">Delete User</Link>
+            <Link to={`/${user._id}/delete`} onClick={deleteHandler} className="aRedTag">Delete User</Link>
         </li>
     )
 }

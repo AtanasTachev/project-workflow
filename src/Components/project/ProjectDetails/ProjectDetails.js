@@ -46,9 +46,9 @@ const ProjectDetails = () => {
                 navigate('/');
             })
     }
-    console.log(user._id);
+    // console.log(user._id);
     let team = project.team;
-    console.log(team);
+    // console.log(team);
     // const isJoined = team.some( x => x === user._id);
 
     const ownerButtons = (

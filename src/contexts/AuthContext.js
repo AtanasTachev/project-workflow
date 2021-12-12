@@ -43,7 +43,7 @@ export const AuthProvider = ({
     // const logout = () => dispatch({type: 'LOGOUT'})
 
     const isAuth = Boolean(user.email);
-    console.log(isAuth);
+    // console.log(isAuth);
 
     return (
         <AuthContext.Provider value = {{ user, login, logout, isAuthenticated: isAuth}}>

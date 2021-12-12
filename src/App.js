@@ -39,7 +39,7 @@ function App() {
                 <Route path="/logout" element={<Logout /> } />
 
                 <Route element={<GuardedRoute />}> 
-                  <Route path="/:userId/myProfile" element={<MyProfile />} />
+                  <Route path="/users/:userId/myProfile" element={<MyProfile />} />
                   <Route path="/users/:userId/details" element={<UserDetails />} />
                   <Route path="/create-project" element={<CreateProject />} />
                   <Route path="/projects/:projectId/details" element={<ProjectDetails />} />      
@@ -52,7 +52,7 @@ function App() {
           </div>
       </Router>
       </NotificationProvider>
-    // </AuthProvider>
+  </AuthProvider>
   );
 }
 
