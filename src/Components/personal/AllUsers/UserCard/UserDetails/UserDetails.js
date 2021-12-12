@@ -22,7 +22,7 @@ const UserDetails = () => {
             <p>Title: {userInfo.title}</p>
             <p>Specialty: {userInfo.specialty}</p>
             <p>Email: {userInfo.email}</p>
-            <p>Projects joined: {userInfo.getJoinedProjects}</p>
+            <p>Projects joined: {userInfo.projectsJoined}</p>
             <p>My projects: {userInfo.myProjects}</p>
         </li>
     )

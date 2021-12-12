@@ -25,9 +25,9 @@ function App() {
     
 
   return (
-    <AuthProvider>
+  <AuthProvider>
 
-        <NotificationProvider>
+    <NotificationProvider>
       <Router>
           <Navigation />
           <Notification />
@@ -51,7 +51,7 @@ function App() {
             <Footer/>
           </div>
       </Router>
-      </NotificationProvider>
+    </NotificationProvider>
   </AuthProvider>
   );
 }

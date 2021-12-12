@@ -9,6 +9,14 @@ export const getAll = async () => {
 
 };
 
+export const getMyProjects = (creator) => {
+    let query = encodeURIComponent(`creator="${creator}"`);
+
+    let response = await fetch
+
+    return myProjects;
+}
+
 
 export const getOne = async (projectId) => {
     let response = await fetch(`${baseUrl}/projects/${projectId}/details`)
