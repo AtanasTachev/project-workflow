@@ -1,8 +1,10 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useLayoutEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
-import * as projectService from '../../../services/projectService.js';
+
 import { AuthContext } from "../../../contexts/AuthContext";
-import { isAuth } from '../../../hoc/isAuth';
+
+import * as projectService from '../../../services/projectService.js';
+
 
 import './card.css'
 
@@ -11,6 +13,7 @@ const ProjectDetails = () => {
     const navigate = useNavigate();
     const { user } = useContext(AuthContext);
     const [project, setProject] = useState({});
+    const [team, setTeam] = useState({});
     const { projectId } = useParams();
 
     useEffect(() => {
@@ -18,38 +21,48 @@ const ProjectDetails = () => {
         .then(projectResult => {
             setProject(projectResult);
         })
-    }, [projectId])
+        .catch(error => {
+            console.log(error);
+        })
+    }, [projectId]);
 
+    useEffect(() => {
+        projectService.getTeam(projectId)
+        .then(projectResult => {
+            setTeam(projectResult);
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }, [projectId]);
+    
     const deleteHandler = (e) => {
         e.preventDefault();
-
+        
         projectService.deleteProject( projectId )
-            .then(() => {
-                navigate('/');
-            })
+        .then(() => {
+            navigate('/');
+        })
     }
-
+    
     const joinHandler = (e) => {
         e.preventDefault();
-
+        
         projectService.joinProject( projectId, user._id )
-            .then(() => {
-                navigate('/');
-            })
+        .then(() => {
+            navigate('/');
+        })
     }
-
+    
     const leaveHandler = (e) => {
         e.preventDefault();
-
+        
         projectService.leaveProject( projectId )
-            .then(() => {
-                navigate('/');
-            })
+        .then(() => {
+            navigate('/');
+        })
     }
-    // console.log(user._id);
-    let team = project.team;
-    // console.log(team);
-    // const isJoined = team.some( x => x === user._id);
+    // console.log(project);
 
     const ownerButtons = (
         <>
@@ -74,7 +87,7 @@ const ProjectDetails = () => {
             <p>Due Date: {project.dueDate}</p>
             <p>Description: {project.description}</p>
             <p>Lead: {project.lead}</p>
-            <p>Team: {project.team}</p>
+            {/* <p>Team: {team}</p> */}
 
             <img width="350" src={project.imageUrl} alt="projectImg"/>
             {user._id && user._id === project.creator

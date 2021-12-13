@@ -9,21 +9,24 @@ export const getAll = async () => {
 
 };
 
-export const getMyProjects = (creator) => {
-    let query = encodeURIComponent(`creator="${creator}"`);
-
-    let response = await fetch
-
-    return myProjects;
-}
-
-
 export const getOne = async (projectId) => {
-    let response = await fetch(`${baseUrl}/projects/${projectId}/details`)
+    let response = await fetch(`${baseUrl}/projects/details/${projectId}`);
     let project = await response.json();
     return project;
-
 };
+
+export const getTeam = async(projectId) => {
+    try{
+        let response = await fetch(`${baseUrl}/projects/details/${projectId}`);
+        let project = await response.json();
+        const teamString = project.team.map(x => `${x.title} ${x.firstName} ${x.lastName}`).join(', ');
+        // console.log(teamString);
+        return teamString;
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
 
 export const create = async ({title, contractor, location, startDate, dueDate, imageUrl, description, lead, creator}) => {
 
@@ -40,7 +43,7 @@ export const create = async ({title, contractor, location, startDate, dueDate, i
 
 export const edit = async (projectId, title, contractor, location, startDate, dueDate, imageUrl, description, lead ) => {
 
-    let response = await fetch(`${baseUrl}/projects/${projectId}/edit`, {
+    let response = await fetch(`${baseUrl}/projects/edit/${projectId}`, {
         method: 'PUT',
         headers: {
             'content-type': 'application/json'
@@ -52,13 +55,13 @@ export const edit = async (projectId, title, contractor, location, startDate, du
 };
 
 export const deleteProject = async (projectId) => {
-    return fetch(`${baseUrl}/projects/${projectId}/delete`, {
+    return fetch(`${baseUrl}/projects/delete/${projectId}`, {
         method: 'DELETE'
     }).then(res => res.json());
 }
 
 export const joinProject = async (projectId, userId) => {
-    return fetch(`${baseUrl}/projects/${projectId}/join`, {
+    return fetch(`${baseUrl}/projects/join/${projectId}`, {
         method: 'PATCH',
         headers: {
             'content-type': 'application/json'
@@ -68,7 +71,7 @@ export const joinProject = async (projectId, userId) => {
 }
 
 export const leaveProject = async (projectId, userId) => {
-    return fetch(`${baseUrl}/projects/${projectId}/leave`, {
+    return fetch(`${baseUrl}/projects/leave/${projectId}`, {
         method: 'PATCH',
         headers: {
             'content-type': 'application/json'

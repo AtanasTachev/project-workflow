@@ -40,9 +40,38 @@ export const logout = ()  => {
 };
 
 export const getUser = async (userId)  => {
-    let response = await fetch(`${baseUrl}/users/${userId}`);
-    let user = await response.json();
-    return user;
+
+    try{
+        let response = await fetch(`${baseUrl}/users/${userId}`);
+        let user = await response.json();
+        return user;
+    } catch (error) {
+       console.log(error.message);
+    }
+};
+
+export const getJoinedProjects = async (userId)  => {
+
+    try{
+        let response = await fetch(`${baseUrl}/users/${userId}`);
+        let user = await response.json();
+        const joinedProjectsString = user.projectsJoined.map(x => x.title).join(', ');
+        return joinedProjectsString;
+    } catch (error) {
+       console.log(error.message);
+    }
+};
+
+export const getMyProjects = async (userId)  => {
+
+    try{
+        let response = await fetch(`${baseUrl}/users/${userId}`);
+        let user = await response.json();
+        const myProjectsString = user.myProjects.map(x => x.title).join(', ');
+        return myProjectsString;
+    } catch (error) {
+       console.log(error.message);
+    }
 };
 
 export const getAllUsers = async ()  => {
@@ -52,7 +81,7 @@ export const getAllUsers = async ()  => {
 };
 
 export const deleteUser = async (usertId) => {
-    return fetch(`${baseUrl}/users/${usertId}/delete`, {
+    return fetch(`${baseUrl}/users/delete/${usertId}`, {
         method: 'DELETE'
     }).then(res => res.json());
 }

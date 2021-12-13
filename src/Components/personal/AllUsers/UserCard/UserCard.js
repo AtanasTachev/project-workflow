@@ -17,7 +17,7 @@ const UserCard = ({userInfo}) => {
             <p>Title: {userInfo.title}</p>
             <p>Specialty: {userInfo.specialty}</p>
             { isAuth ?
-            <Link className="atag" id={id} to={`/users/${userInfo._id}/details`}>Details</Link>
+            <Link className="atag" id={id} to={`/users/details/${userInfo._id}`}>Details</Link>
             : ''
         }
         </li>

@@ -17,7 +17,7 @@ const ProjectCard = ({project}) => {
             <p>Lead: {project.lead}</p>
             <img width="350" height="200" src={project.imageUrl} alt="projectImg"/>
             { isAuth ?
-            <Link className="atag" to={`/projects/${project._id}/details`}>Details</Link>
+            <Link className="atag" to={`/projects/details/${project._id}`}>Details</Link>
             : ''
             }
         </li>

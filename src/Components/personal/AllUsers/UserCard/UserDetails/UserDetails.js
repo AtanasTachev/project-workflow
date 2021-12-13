@@ -1,20 +1,36 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import * as authService from '../../../../../services/authService';
 
 const UserDetails = () => {
     const {userId} = useParams();
     
     const [userInfo, setUserInfo] = useState({});
+    const [joinedProjects, setJoinedProjects] = useState({});
+    const [myProjects, setMyProjects] = useState({});
 
     useEffect(() => {
         authService.getUser(userId)
         .then(userResult => {
             setUserInfo(userResult);
         })
+    }, [userId]);
+
+    useEffect(() => {
+        authService.getJoinedProjects(userId)
+        .then(userResult => {
+            setJoinedProjects(userResult);
+        })
     }, [userId])
 
-    // console.log(userInfo.getJoinedProjects());
+    useEffect(() => {
+        authService.getMyProjects(userId)
+        .then(userResult => {
+            setMyProjects(userResult);
+        })
+    }, [userId])
+
+    console.log(joinedProjects, myProjects);
 
      return (
         <li className="h2tag">
@@ -22,8 +38,10 @@ const UserDetails = () => {
             <p>Title: {userInfo.title}</p>
             <p>Specialty: {userInfo.specialty}</p>
             <p>Email: {userInfo.email}</p>
-            <p>Projects joined: {userInfo.projectsJoined}</p>
-            <p>My projects: {userInfo.myProjects}</p>
+            <Link to={`/myProjects/${userInfo._id}`} className="aBlueTag">My Projects</Link>
+            <Link to={`/projectsJoined/${userInfo._id}`} className="aBlueTag">Joined Projects</Link>
+            {/* <p>Projects joined: {joinedProjects}</p> */}
+            {/* <p>My projects: {myProjects}</p> */}
         </li>
     )
 }

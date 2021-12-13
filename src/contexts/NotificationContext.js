@@ -9,7 +9,7 @@ export const types = {
     success: 'success'
 };
 
-const initialNotificationState = { show: true, message: '', type: types.error };
+const initialNotificationState = { show: false, message: '', type: types.error };
 
 export const NotificationProvider = ({
     children

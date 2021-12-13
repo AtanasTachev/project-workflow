@@ -14,8 +14,8 @@ const Notification = () => {
         <div className="notification" >
             <button className="closeSign" onClick={hideNotification} >x</button>
             <body className="center">
-                {/* {notification.message} */}
-                You are not authorised!
+                {notification.message}
+                {/* You are not authorised! */}
             </body>
         </div>
     )
