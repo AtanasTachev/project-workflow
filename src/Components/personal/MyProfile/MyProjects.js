@@ -1,11 +1,14 @@
 import { useState, useEffect, useContext } from "react";
+import { useParams } from "react-router-dom";
 import * as authService from '../../../services/authService';
-import { AuthContext } from "../../../contexts/AuthContext";
+// import { AuthContext } from "../../../contexts/AuthContext";
 
 const MyProjects = () => {
-    const { user } = useContext(AuthContext);
+    // const { user } = useContext(AuthContext);
     // const [userInfo, setUserInfo] = useState({});
     const [myProjects, setMyProjects] = useState({});
+
+    const userId = useParams();
 
     // useEffect(() => {
     //     authService.getUser(user._id)
@@ -15,11 +18,11 @@ const MyProjects = () => {
     // }, [user._id]);
 
     useEffect(() => {
-        authService.getMyProjects(user._id)
+        authService.getMyProjects(userId)
         .then(userResult => {
             setMyProjects(userResult);
         })
-    }, [user._id])
+    }, [userId])
 
     return (
         <li className="h2tag">

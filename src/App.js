@@ -12,6 +12,7 @@ import Home from './Components/Home.js';
 import CreateProject from './Components/project/CreateProject/CreateProject';
 import EditProject from './Components/project/EditProject/EditProject';
 import ProjectDetails from './Components/project/ProjectDetails/ProjectDetails';
+import ProjectTeam from './Components/project/ProjectDetails/ProjectTeam';
 import MyProfile from './Components/personal/MyProfile/MyProfile';
 import MyProjects from './Components/personal/MyProfile/MyProjects';
 import JoinedProjects from './Components/personal/MyProfile/JoinedProjects';
@@ -49,7 +50,8 @@ function App() {
                       <Route path="/users/myProjects/:userId" element={<MyProjects />} />
                       <Route path="/users/projectsJoined/:userId" element={<JoinedProjects />} />
                       <Route path="/create-project" element={<CreateProject />} />
-                      <Route path="/projects/details/:projectId" element={<ProjectDetails />} />      
+                      <Route path="/projects/details/:projectId" element={<ProjectDetails />} />  
+                      <Route path="/projects/team/:projectId" element={<ProjectTeam />} />      
                       <Route path="projects/edit/:projectId" element={<EditProject />} />
                     </Route>
                     

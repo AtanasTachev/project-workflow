@@ -66,15 +66,16 @@ const ProjectDetails = () => {
 
     const ownerButtons = (
         <>
-            <Link to={`/${projectId}/edit`} className="aBlueTag">Edit Project</Link>
-            <Link to={`/${projectId}/delete`} onClick={deleteHandler} className="aRedTag">Delete Project</Link>
+            <Link to={`/edit/${projectId}`} className="aBlueTag">Edit Project</Link>
+            <Link to={`/delete/${projectId}`} onClick={deleteHandler} className="aRedTag">Delete Project</Link>
         </>
     )
 
     const userButtons = (
         <>
-            <Link to={`/${projectId}/join`} onClick={joinHandler} className="aBlueTag">Join Project</Link>
-            <Link to={`/${projectId}/leave`} onClick={leaveHandler} className="aRedTag">Leave Project</Link>
+            <Link to={`/join/${projectId}`} onClick={joinHandler} className="aBlueTag">Join Project</Link>
+            <Link to={`/leave/${projectId}`} onClick={leaveHandler} className="aRedTag">Leave Project</Link>
+            <Link to={`/team/${projectId}`} className="aBlueTag">Project Team</Link>
         </>
     )
 
