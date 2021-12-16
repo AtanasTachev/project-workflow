@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
-import { isAuth } from '../../../hoc/isAuth';
 import * as projectService from '../../../services/projectService';
 import './form.css';
 

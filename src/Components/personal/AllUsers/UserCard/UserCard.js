@@ -1,8 +1,5 @@
-import { useState, useEffect } from "react";
-import * as authService from '../../../../services/authService';
 import { Link } from 'react-router-dom';
-// import { useContext } from "react";
-// import { AuthContext } from "../../../../contexts/AuthContext";
+
 import './card.css';
 
 const UserCard = ({userInfo}) => {

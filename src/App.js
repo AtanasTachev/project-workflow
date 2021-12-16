@@ -1,8 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 
-import { AuthContext, AuthProvider } from './contexts/AuthContext';
-import { ProjectContext, ProjectProvider } from './contexts/ProjectContext';
+import { AuthProvider } from './contexts/AuthContext';
 
 import Navigation from './Components/Navigation';
 import Footer from './Components/Footer';
@@ -32,7 +31,6 @@ function App() {
     <ErrorBoundary>
 
       <AuthProvider>
-      <ProjectProvider>
 
         <NotificationProvider>
           <Router>
@@ -61,7 +59,6 @@ function App() {
               </div>
           </Router>
         </NotificationProvider>
-        </ProjectProvider>
       </AuthProvider>
     </ErrorBoundary>
   );

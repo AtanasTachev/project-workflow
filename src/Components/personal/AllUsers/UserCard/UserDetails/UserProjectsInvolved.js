@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import * as authService from '../../../../../services/authService';
 
 const ProjectsInvolved = () => {
@@ -18,10 +18,6 @@ const ProjectsInvolved = () => {
             setMyProjects(userResult.myProjects);
         })
     }, [userId])
-
-    console.log(user);
-    console.log(joinedProjects);
-    console.log(myProjects);
 
     return (
         <div className="h2tag">

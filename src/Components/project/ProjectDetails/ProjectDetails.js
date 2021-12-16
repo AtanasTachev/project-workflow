@@ -2,11 +2,9 @@ import { useState, useEffect, useContext } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 
 import { AuthContext } from "../../../contexts/AuthContext";
-// import { useProjectContext } from '../../../contexts/ProjectContext.js'
 
 import * as projectService from '../../../services/projectService.js';
-
-import ProjectTeam from "./ProjectTeam";
+import * as authService from '../../../services/authService.js';
 
 import './card.css'
 
@@ -14,21 +12,31 @@ import './card.css'
 const ProjectDetails = () => {
     const navigate = useNavigate();
     const { user } = useContext(AuthContext);
-    // const { addProject } = useProjectContext();
 
     const [project, setProject] = useState({});
+    const [joinedP, setJoinedP] = useState({});
+
     const { projectId } = useParams();
 
     useEffect(() => {
         projectService.getOne(projectId)
         .then(projectResult => { 
             setProject(projectResult);  
-            // addProject( projectResult);
         })
         .catch(error => {
             console.log(error);
         })
     }, [projectId]);
+
+    useEffect(() => {
+        authService.getUser(user._id)
+        .then(userResult => { 
+            setJoinedP(userResult.projectsJoined);  
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }, [user._id]);
 
    
     const deleteHandler = (e) => {
@@ -58,6 +66,16 @@ const ProjectDetails = () => {
         })
     }
 
+    console.log(joinedP);
+    let hasJoined = '';
+
+    // if(joinedP.length > 0) {
+    //     joinedP.map(x => x._id);
+    //     console.log(joinedP);
+    //     hasJoined = Boolean(joinedP.includes(projectId));
+    //     console.log(hasJoined);
+    // }
+
     const ownerButtons = (
         <>
             <Link to={`/edit/${projectId}`} className="aBlueTag">Edit Project</Link>
@@ -67,11 +85,14 @@ const ProjectDetails = () => {
 
     const userButtons = (
         <>
-            <Link to={`/join/${projectId}`} onClick={joinHandler} className="aBlueTag">Join Project</Link>
-            <Link to={`/leave/${projectId}`} onClick={leaveHandler} className="aRedTag">Leave Project</Link>
+            { hasJoined
+                ?
+                <Link to={`/join/${projectId}`} onClick={joinHandler} className="aBlueTag">Join Project</Link>
+                :<Link to={`/leave/${projectId}`} onClick={leaveHandler} className="aRedTag">Leave Project</Link>
+            }
         </>
     )
-    console.log(project);
+    // console.log(joinedP);
 
     return (
         <li className="h2tag">

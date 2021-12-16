@@ -1,4 +1,3 @@
-import { isAuth } from '../../../hoc/isAuth';
 import { useNavigate } from 'react-router-dom';
 import * as projectService from '../../../services/projectService'
 import { useContext } from 'react';
@@ -24,7 +23,6 @@ const CreateProject = () => {
         let description = formData.get('description');
         let lead = formData.get('lead');
         const creator = user._id
-        // console.log(creator);
 
     projectService.create({title, contractor, location, startDate, dueDate, imageUrl, description, lead, creator}).then(result => {
         navigate('/');

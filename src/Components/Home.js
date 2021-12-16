@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import ProjectList from './project/ProjectList/ProjectList'
 import '../App.css';
 
@@ -9,7 +8,6 @@ const Home = () => {
         <>
          <ProjectList />
             <img className='center' src={imageUrl} alt='backgroundImg' />
-            {/* {projects.map(project => <ProjectList />)} */}
         </>
    );
 }

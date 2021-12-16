@@ -23,7 +23,6 @@ const ProjectTeam = () => {
             })
         }, [projectId]);
 
-            console.log(team);
 
         if(!team) { return null };
 
