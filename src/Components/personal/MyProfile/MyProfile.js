@@ -18,19 +18,19 @@ const MyProfile = () => {
         })
     }, [user._id]);
 
-    useEffect(() => {
-        authService.getJoinedProjects(user._id)
-        .then(userResult => {
-            setjoinedProjects(userResult);
-        })
-    }, [user._id])
+    // useEffect(() => {
+    //     authService.getJoinedProjects(user._id)
+    //     .then(userResult => {
+    //         setjoinedProjects(userResult);
+    //     })
+    // }, [user._id])
 
-    useEffect(() => {
-        authService.getMyProjects(user._id)
-        .then(userResult => {
-            setmyProjects(userResult);
-        })
-    }, [user._id])
+    // useEffect(() => {
+    //     authService.getMyProjects(user._id)
+    //     .then(userResult => {
+    //         setmyProjects(userResult);
+    //     })
+    // }, [user._id])
 
     const deleteHandler = (e) => {
         e.preventDefault();
@@ -41,18 +41,15 @@ const MyProfile = () => {
             })
     }
 
-    console.log(myProjects, joinedProjects);
+    // console.log(myProjects, joinedProjects);
     return (
         <li className="h2tag">
             <h4>Name: {`${userInfo.firstName} ${userInfo.lastName}`}</h4>
             <p>Title: {userInfo.title}</p>
             <p>Specialty: {userInfo.specialty}</p>
             <p>Email: {userInfo.email}</p> 
-            {/* <p>Projects joined: {joinedProjects}</p> */}
-            {/* <p>My projects: {myProjects}</p> */}
             <Link to={`/delete/${user._id}`} onClick={deleteHandler} className="aRedTag">Delete User</Link>
-            <Link to={`/myProjects/${user._id}`} className="aBlueTag">My Projects</Link>
-            <Link to={`/projectsJoined/${user._id}`} className="aBlueTag">Joined Projects</Link>
+            <Link to={`/users/projectsInvolved/${user._id}`} className="aBlueTag">Projects Involved</Link>
         </li>
     )
 }

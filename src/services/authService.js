@@ -56,6 +56,7 @@ export const getJoinedProjects = async (userId)  => {
         let response = await fetch(`${baseUrl}/users/${userId}`);
         let user = await response.json();
         const joinedProjectsString = user.projectsJoined.map(x => x.title).join(', ');
+        console.log(joinedProjectsString);
         return joinedProjectsString;
     } catch (error) {
        console.log(error.message);

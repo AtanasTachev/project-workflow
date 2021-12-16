@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
-import * as authService from '../../../services/authService';
+import * as authService from '../src/services/authService';
 // import { AuthContext } from "../../../contexts/AuthContext";
 
 const MyProjects = () => {

@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
-import * as authService from '../../../services/authService';
+import * as authService from '../src/services/authService';
 // import { AuthContext } from "../../../contexts/AuthContext";
 
 const JoinedProjects = () => {
@@ -15,13 +15,6 @@ const JoinedProjects = () => {
     //         setUserInfo(userResult);
     //     })
     // }, [user._id]);
-
-    useEffect(() => {
-        authService.getJoinedProjects(userId)
-        .then(userResult => {
-            setJoinedProjects(userResult);
-        })
-    }, [userId])
 
     return (
         <li className="h2tag">

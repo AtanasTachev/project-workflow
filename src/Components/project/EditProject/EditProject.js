@@ -32,7 +32,7 @@ const EditProject = () => {
 
     
         await projectService.edit(projectId, title, contractor, location, startDate, dueDate, imageUrl, description, lead).then(result => {
-            navigate('/');
+            navigate(`/projects/details/${projectId}`);
         })
     }
     return (

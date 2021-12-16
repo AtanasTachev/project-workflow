@@ -41,6 +41,17 @@
   opacity: 50%;
 }
 
+.list {
+  display: flex;
+  width: 400px;
+  height: 30px;
+  background-color: rgb(231, 230, 226);
+  margin: 10px;
+  border-radius: 5px;
+  padding: 2px;
+  list-style-type: none;
+}
+
 
 
 

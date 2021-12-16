@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 
 import { AuthContext, AuthProvider } from './contexts/AuthContext';
+import { ProjectContext, ProjectProvider } from './contexts/ProjectContext';
 
 import Navigation from './Components/Navigation';
 import Footer from './Components/Footer';
@@ -14,14 +15,13 @@ import EditProject from './Components/project/EditProject/EditProject';
 import ProjectDetails from './Components/project/ProjectDetails/ProjectDetails';
 import ProjectTeam from './Components/project/ProjectDetails/ProjectTeam';
 import MyProfile from './Components/personal/MyProfile/MyProfile';
-import MyProjects from './Components/personal/MyProfile/MyProjects';
-import JoinedProjects from './Components/personal/MyProfile/JoinedProjects';
 import AllUsers from './Components/personal/AllUsers/AllUsers';
 import UserDetails from './Components/personal/AllUsers/UserCard/UserDetails/UserDetails';
 import Notification from './Components/common/Notification/Notification';
 import { NotificationProvider } from './contexts/NotificationContext';
 import GuardedRoute from './Components/common/GuardedRoute';
 import ErrorBoundary from './Components/common/ErrorBoundary.js';
+import ProjectsInvolved from './Components/personal/AllUsers/UserCard/UserDetails/UserProjectsInvolved';
 
 
 
@@ -32,6 +32,7 @@ function App() {
     <ErrorBoundary>
 
       <AuthProvider>
+      <ProjectProvider>
 
         <NotificationProvider>
           <Router>
@@ -47,12 +48,11 @@ function App() {
                     <Route element={<GuardedRoute />}> 
                       <Route path="/users/details/:userId" element={<UserDetails />} />
                       <Route path="/users/myProfile/:userId" element={<MyProfile />} />
-                      <Route path="/users/myProjects/:userId" element={<MyProjects />} />
-                      <Route path="/users/projectsJoined/:userId" element={<JoinedProjects />} />
+                      <Route path="/users/projectsInvolved/:userId" element={<ProjectsInvolved />} />
                       <Route path="/create-project" element={<CreateProject />} />
                       <Route path="/projects/details/:projectId" element={<ProjectDetails />} />  
-                      <Route path="/projects/team/:projectId" element={<ProjectTeam />} />      
-                      <Route path="projects/edit/:projectId" element={<EditProject />} />
+                      <Route path="/team/:projectId" element={<ProjectTeam />} />  
+                      <Route path="/edit/:projectId" element={<EditProject />} />
                     </Route>
                     
                     <Route path="/allUsers" element={<AllUsers />} />
@@ -61,6 +61,7 @@ function App() {
               </div>
           </Router>
         </NotificationProvider>
+        </ProjectProvider>
       </AuthProvider>
     </ErrorBoundary>
   );

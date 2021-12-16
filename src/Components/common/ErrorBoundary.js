@@ -19,7 +19,7 @@ class ErrorBoundary extends Component {
 
     render() {
         if(this.state.error) {
-            return ( <h1 position="absolute" display="flex">404 Not Found</h1>);
+            return ( <h1>404 Not Found</h1>);
         }
         return this.props.children;
     }

@@ -10,23 +10,15 @@ export const getAll = async () => {
 };
 
 export const getOne = async (projectId) => {
-    let response = await fetch(`${baseUrl}/projects/details/${projectId}`);
-    let project = await response.json();
-    return project;
-};
 
-export const getTeam = async(projectId) => {
     try{
         let response = await fetch(`${baseUrl}/projects/details/${projectId}`);
         let project = await response.json();
-        const teamString = project.team.map(x => `${x.title} ${x.firstName} ${x.lastName}`).join(', ');
-        // console.log(teamString);
-        return teamString;
+        return project;
+    } catch (error) {
+        return { message: error.message };
     }
-    catch (error) {
-        console.log(error);
-    }
-}
+};
 
 export const create = async ({title, contractor, location, startDate, dueDate, imageUrl, description, lead, creator}) => {
 
