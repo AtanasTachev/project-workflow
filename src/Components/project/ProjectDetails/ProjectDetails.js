@@ -66,15 +66,12 @@ const ProjectDetails = () => {
         })
     }
 
-    console.log(joinedP);
     let hasJoined = '';
 
-    // if(joinedP.length > 0) {
-    //     joinedP.map(x => x._id);
-    //     console.log(joinedP);
-    //     hasJoined = Boolean(joinedP.includes(projectId));
-    //     console.log(hasJoined);
-    // }
+    if(joinedP.length > 0) {
+        let joinedIds = joinedP.map(x => x._id);
+        hasJoined = joinedIds.includes(projectId);
+    }
 
     const ownerButtons = (
         <>
@@ -87,8 +84,8 @@ const ProjectDetails = () => {
         <>
             { hasJoined
                 ?
-                <Link to={`/join/${projectId}`} onClick={joinHandler} className="aBlueTag">Join Project</Link>
-                :<Link to={`/leave/${projectId}`} onClick={leaveHandler} className="aRedTag">Leave Project</Link>
+                <Link to={`/leave/${projectId}`} onClick={leaveHandler} className="aRedTag">Leave Project</Link>
+                :<Link to={`/join/${projectId}`} onClick={joinHandler} className="aBlueTag">Join Project</Link>
             }
         </>
     )
@@ -103,9 +100,6 @@ const ProjectDetails = () => {
             <p>Due Date: {project.dueDate}</p>
             <p>Description: {project.description}</p>
             <p>Lead: {project.lead}</p>
-            {/* <div >Team:  
-                <ProjectTeam project={project}/>
-            </div> */}
 
             <img width="350" src={project.imageUrl} alt="projectImg"/>
             {user._id && user._id === project.creator
