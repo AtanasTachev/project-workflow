@@ -53,16 +53,16 @@ const ProjectDetails = () => {
         
         projectService.joinProject( projectId, user._id )
         .then(() => {
-            navigate('/');
+            navigate(`/projects/details/${projectId}`);
         })
     }
     
     const leaveHandler = (e) => {
         e.preventDefault();
         
-        projectService.leaveProject( projectId )
+        projectService.leaveProject( projectId, user._id )
         .then(() => {
-            navigate('/');
+            navigate(`/projects/details/${projectId}`);
         })
     }
 
@@ -89,7 +89,6 @@ const ProjectDetails = () => {
             }
         </>
     )
-    // console.log(joinedP);
 
     return (
         <li className="h2tag">
