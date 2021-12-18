@@ -9,7 +9,6 @@ import { AuthContext } from '../contexts/AuthContext';
 const Navigation = () => {
 
     const { user } = useContext(AuthContext);
-    // console.log(user);
 
     return (<nav className="nav">
         <Link to="/" className="h2tag"> Project Workflow </Link>

@@ -5,6 +5,7 @@ import { AuthContext } from "../../../contexts/AuthContext";
 
 import * as projectService from '../../../services/projectService.js';
 import * as authService from '../../../services/authService.js';
+import {  } from '../../../contexts/NotificationContext'
 
 import './card.css'
 
@@ -53,7 +54,9 @@ const ProjectDetails = () => {
         
         projectService.joinProject( projectId, user._id )
         .then(() => {
+            // setProject({...state, state.projectsJoined })
             navigate(`/projects/details/${projectId}`);
+
         })
     }
     
