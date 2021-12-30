@@ -17,7 +17,6 @@ export const login = async (email, password)  => {
 };
 
 export const register = async (specialty, title, firstName, lastName, email, password, repeatPassword)  => {
-    // console.log(specialty, title, firstName, lastName, email, password, repeatPassword);
     let response = await fetch(`${baseUrl}/users/register`, {
         method: 'POST',
         headers: {
@@ -26,7 +25,6 @@ export const register = async (specialty, title, firstName, lastName, email, pas
         body: JSON.stringify({specialty, title, firstName, lastName, email, password, repeatPassword})
     });
     let result = await response.json();
-    // console.log(result);
     return result;
 };
 
