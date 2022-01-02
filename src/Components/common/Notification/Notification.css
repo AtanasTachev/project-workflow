@@ -4,8 +4,9 @@
     top: 50px;
     width: 400px;
     height: 100px;
-    opacity: 75%;
-    color: white;
+    /* opacity: 75%; */
+    color: #030101;
+    text-emphasis-color: white;
     border-radius: .5rem;
 }
 

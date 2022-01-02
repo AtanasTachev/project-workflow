@@ -34,9 +34,10 @@ function App() {
 
         <NotificationProvider>
           <Router>
+            <div className="App">
               <Navigation />
               <Notification />
-              <div className="App">
+              <div className='wrapper'>
                   <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/register" element={<Register />} />
@@ -55,7 +56,8 @@ function App() {
                     
                     <Route path="/allUsers" element={<AllUsers />} />
                   </Routes>
-                <Footer/>
+                </div>
+                  <Footer/>
               </div>
           </Router>
         </NotificationProvider>

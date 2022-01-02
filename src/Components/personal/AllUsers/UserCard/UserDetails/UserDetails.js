@@ -17,7 +17,7 @@ const UserDetails = () => {
 
 
      return (
-        <li className="h2tag">
+        <li className="h2tagList">
             <h4>Name: {`${userInfo.firstName} ${userInfo.lastName}`}</h4>
             <p>Title: {userInfo.title}</p>
             <p>Specialty: {userInfo.specialty}</p>

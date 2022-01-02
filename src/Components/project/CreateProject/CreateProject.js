@@ -2,6 +2,8 @@ import { useNavigate } from 'react-router-dom';
 import * as projectService from '../../../services/projectService'
 import { useContext } from 'react';
 import { AuthContext } from '../../../contexts/AuthContext';
+import { useNotificationContext, types } from '../../../contexts/NotificationContext'
+
 
 import './form.css';
 
@@ -10,6 +12,9 @@ const CreateProject = () => {
     const { user } = useContext(AuthContext);
     
     const navigate = useNavigate();
+    const { addNotification } = useNotificationContext();
+    let err;
+
     
     const onProjectCreate = (e) => {
         e.preventDefault();
@@ -24,11 +29,26 @@ const CreateProject = () => {
         let lead = formData.get('lead');
         const creator = user._id
 
-    projectService.create({title, contractor, location, startDate, dueDate, imageUrl, description, lead, creator}).then(result => {
+        // if(title = '' || contractor = '' || location = '' || 
+        //     startDate = '' || dueDate = '' || imageUrl = '' 
+        //     || description = '' || lead = '') {
+        //     return;
+        // }
+
+        if(title.length < 6) {
+            err = 'Title should be at least 6 characters long!'
+            return;
+        }
+
+
+        projectService.create({title, contractor, location, startDate, dueDate, imageUrl, description, lead, creator}).then(result => {
+            addNotification('You successfully added a project!', types.success);
         navigate('/');
-    })
-    
-}
+        })
+        .catch(error => {
+            addNotification([`${error.message}`, err], types.warn)
+        });
+        }
     return (
 
 <section id="login-page">

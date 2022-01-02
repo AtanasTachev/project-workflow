@@ -13,7 +13,7 @@
   justify-content: space-between;
 }
 
-.h2tag {
+.h2tagList {
   padding: 1px;
   float:left;
   display: inline-flexbox;
@@ -25,7 +25,7 @@
   background-color: rgba(255, 196, 34, 0.979);
   border-radius: 0.35em;
   margin-left: 0.5em;
-  max-width: 650px;
+  width: 300px;
   justify-content: left;
   word-wrap: break-word;
 }
@@ -43,8 +43,7 @@
 
 .list {
   display: flex;
-  width: 400px;
-  height: 30px;
+  width: 225px;
   background-color: rgb(231, 230, 226);
   margin: 10px;
   border-radius: 5px;

@@ -10,7 +10,7 @@ const UserCard = ({userInfo}) => {
 
     const isAuth = Boolean(userInfo)
     const id = userInfo._id;
-    console.log(userInfo.specialty);
+    // console.log(userInfo.specialty);
 
     useEffect(()=> {
         authService.getSortedUsers(userInfo.specialty)
@@ -19,10 +19,10 @@ const UserCard = ({userInfo}) => {
         })
     }, []);
 
-    console.log(sortedUsers);
+    // console.log(sortedUsers);
     
     return (
-        <li className="h2tag">
+        <li className="h2tagList">
             <h4>Full Name: {`${userInfo.firstName} ${userInfo.lastName}`}</h4>
             <p>Title: {userInfo.title}</p>
             <p>Specialty: {userInfo.specialty}</p>

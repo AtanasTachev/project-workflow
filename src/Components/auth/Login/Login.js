@@ -11,7 +11,7 @@ const Login = () => {
     const { login } = useContext(AuthContext); 
 
     const navigate = useNavigate();
-    const { addNotification, notification } = useNotificationContext();
+    const { addNotification } = useNotificationContext();
 
 
     const onLoginHandler = (e) => {
@@ -30,7 +30,7 @@ const Login = () => {
             navigate('/');
         })
         .catch(error => {
-            addNotification(`${error.message}`, types.warn)
+            addNotification('Invalid username or password', types.warn)
             console.log({message: error.message});
         })
 

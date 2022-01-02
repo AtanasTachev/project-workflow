@@ -34,7 +34,7 @@ const ProjectTeam = () => {
             <div className='h2tag'>Team:  
                 {team.length > 0
                     ?(<ul>
-                        {team.map(x => <li key={x._id} className='list'>{x.title} {x.firstName} {x.lastName}</li>)}
+                        {team.map(x => <li key={x._id} className='list'>{x.specialty} {x.title} {x.firstName} {x.lastName}</li>)}
                     </ul>)
                     : <p>No specialists in team</p>}
             </div>

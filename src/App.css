@@ -1,7 +1,16 @@
 .App {
   background-color: gainsboro;
-  width: auto;
-  height: auto;
+  /* width: auto;
+  height: auto; */
+  min-height: 100vh;
+  position: relative;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2.5rem;
+  flex: 2;
 }
 
 .App-logo {
@@ -78,11 +87,11 @@
   color: white;
   justify-content: center;
   background-color:rgb(102, 105, 110);
-  height: 2.5em;
-  position:absolute;
+  height: 2.5rem;
+  position: absolute;
+  margin-top: 1rem;
   bottom: 0;
   width: 100%;
-  position: fixed;
 }
 
 .center {
