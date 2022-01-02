@@ -6,6 +6,7 @@ const UserSpecialty = () => {
 
     const [users, setUsers] = useState([]);
 
+
     useEffect(()=> {
         authService.getAllUsers()
         .then(result => {

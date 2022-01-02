@@ -1,5 +1,5 @@
 import './Notification.css';
-import { useNotificationContext } from '../../../contexts/NotificationContext';
+import { useNotificationContext, types } from '../../../contexts/NotificationContext';
 
 const Notification = () => {
     const { notification, hideNotification } = useNotificationContext();
@@ -8,15 +8,14 @@ const Notification = () => {
         return null;
     }
 
-    // className={notification.type} 
-
+ 
     return (
-        <div className="notification" >
+        <div className={["notification", notification.type].join(' ')}>
             <button className="closeSign" onClick={hideNotification} >x</button>
-            <body className="center">
+            <p className="center" >
                 {notification.message}
                 {/* You are not authorised! */}
-            </body>
+            </p>
         </div>
     )
 }

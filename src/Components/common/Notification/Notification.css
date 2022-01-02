@@ -4,10 +4,25 @@
     top: 50px;
     width: 400px;
     height: 100px;
-    background-color: brown;
     opacity: 75%;
     color: white;
     border-radius: .5rem;
+}
+
+.warning {
+    background-color: brown;
+}
+
+.success {
+    background-color: rgb(69, 231, 47);
+}
+
+.info {
+    background-color: rgb(19, 145, 230);
+}
+
+.danger {
+    background-color: rgb(165, 42, 134);
 }
 
 .closeSign {

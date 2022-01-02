@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { useNotificationContext, types } from '../../../contexts/NotificationContext'
 import { AuthContext } from '../../../contexts/AuthContext';
 import * as authSevice from '../../../services/authService';
 import './form.css';
@@ -10,6 +11,8 @@ const Login = () => {
     const { login } = useContext(AuthContext); 
 
     const navigate = useNavigate();
+    const { addNotification, notification } = useNotificationContext();
+
 
     const onLoginHandler = (e) => {
 
@@ -23,10 +26,12 @@ const Login = () => {
         authSevice.login(email, password)
         .then((authData) => {
             login(authData);
+            addNotification('You logged in successfully', types.success)
             navigate('/');
         })
-        .catch(err => {
-            console.log({message: err.message});
+        .catch(error => {
+            addNotification(`${error.message}`, types.warn)
+            console.log({message: error.message});
         })
 
     }

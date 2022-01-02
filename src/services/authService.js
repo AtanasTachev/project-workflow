@@ -79,6 +79,12 @@ export const getAllUsers = async ()  => {
     return users;
 };
 
+export const getSortedUsers = async ()  => {
+    let response = await fetch(`${baseUrl}/users/sort`);
+    let users = await response.json();
+    return users;
+};
+
 export const deleteUser = async (usertId) => {
     return fetch(`${baseUrl}/users/delete/${usertId}`, {
         method: 'DELETE'
