@@ -29,11 +29,12 @@ const CreateProject = () => {
         let lead = formData.get('lead');
         const creator = user._id
 
-        // if(title = '' || contractor = '' || location = '' || 
-        //     startDate = '' || dueDate = '' || imageUrl = '' 
-        //     || description = '' || lead = '') {
-        //     return;
-        // }
+        if(title === '' || contractor === '' || location === '' || 
+            startDate === '' || dueDate === '' || imageUrl === '' 
+            || description === '' || lead === '') {
+                addNotification('Fields cannot be empty', types.warn)
+            return;
+        }
 
         if(title.length < 6) {
             err = 'Title should be at least 6 characters long!'
