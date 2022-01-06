@@ -1,3 +1,1 @@
-exports.baseUrl = 'http://localhost:3030';
-
-// exports.baseUrl = 'https://git.heroku.com/workflow-project-server.git';
+exports.baseUrl = 'https://rocky-savannah-60041.herokuapp.com';

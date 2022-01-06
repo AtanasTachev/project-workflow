@@ -8,7 +8,7 @@ const UserSpecialty = () => {
 
 
     useEffect(()=> {
-        authService.getAllUsers()
+        authService.getSortedUsers()
         .then(result => {
             setUsers(result);
         })
@@ -17,7 +17,8 @@ const UserSpecialty = () => {
 
     return (
         <ul>
-            {users.map(x => <UserCard key={x._id} userInfo={x} />)}
+            {users.map(x => 
+            <UserCard key={x._id} userInfo={x} />)}
         </ul>
     );
 };

@@ -13,10 +13,15 @@ const ProjectList = () => {
         })
     }, []);
 
+    const empty = Boolean(projects.length)
+
     return (
-        <ul>
-            {projects.map(x => <ProjectCard key={x._id} project={x} />)}
-        </ul>
+        (empty) ?
+            (<ul>
+                {projects.map(x => <ProjectCard key={x._id} project={x} />)}
+            </ul>)
+            : <h3>No projects in database!</h3>
+        
     );
     };
     export default ProjectList;
