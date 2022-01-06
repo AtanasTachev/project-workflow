@@ -1,0 +1,39 @@
+.notification {
+    position: absolute;
+    right: 50px;
+    top: 50px;
+    width: 400px;
+    height: 100px;
+    /* opacity: 75%; */
+    color: #030101;
+    text-emphasis-color: white;
+    border-radius: .5rem;
+}
+
+.warning {
+    background-color: brown;
+}
+
+.success {
+    background-color: rgb(69, 231, 47);
+}
+
+.info {
+    background-color: rgb(19, 145, 230);
+}
+
+.danger {
+    background-color: rgb(165, 42, 134);
+}
+
+.closeSign {
+    position: inherit;
+    top: 10px;
+    right: 10px;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+}

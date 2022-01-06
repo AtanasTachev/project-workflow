@@ -1,0 +1,58 @@
+
+.atag {
+  padding: 1px;
+  font-size: 1em;
+  margin-top: 0.7rem;
+  float:inherit;
+  color: aliceblue;
+  display:inline;
+  background-color: rgb(61, 64, 70);
+  border-radius: 0.35em;
+  margin-left: 0.5em;
+  margin-right: 1em;
+  justify-content: space-between;
+}
+
+.h2tagList {
+  padding: 1px;
+  float:left;
+  display: inline-flexbox;
+  margin-top: 0.6rem;
+  margin-left: 3em;
+  font-size: 1.25em;
+  color: rgb(6, 7, 8);
+  display:inline;
+  background-color: rgba(255, 196, 34, 0.979);
+  border-radius: 0.35em;
+  margin-left: 0.5em;
+  width: 300px;
+  justify-content: left;
+  word-wrap: break-word;
+}
+
+
+.center {
+  display: flex;
+  justify-content: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  opacity: 50%;
+}
+
+.list {
+  display: flex;
+  width: 225px;
+  background-color: rgb(231, 230, 226);
+  margin: 10px;
+  border-radius: 5px;
+  padding: 2px;
+  list-style-type: none;
+}
+
+
+
+
+
+
