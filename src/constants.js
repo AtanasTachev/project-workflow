@@ -1,1 +1,0 @@
-exports.baseUrl = 'https://rocky-savannah-60041.herokuapp.com';
